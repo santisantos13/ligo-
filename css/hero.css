@@ -1,0 +1,140 @@
+/*  Main  */
+
+.linha-1,
+.linha-2 {
+  display: block;
+}
+
+.destaque {
+  background-image: linear-gradient(to right,
+      var(--royal-purple),
+      var(--purple-rose));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.texto h1 {
+  font-size: 80px;
+  line-height: 1;
+  margin: 40px 0 24px;
+}
+
+.texto p {
+  max-width: 520px;
+  color: var(--slate2);
+  font-size: 30px;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/*  Busca  */
+.busca {
+  display: flex;
+  align-items: center;
+  max-width: 760px;
+  margin-top: 32px;
+  padding: 6px;
+  background-color: var(--white);
+  border-radius: 999px;
+}
+
+.busca:focus-within {
+  outline: 2px solid var(--royal-purple);
+  outline-offset: 3px;
+}
+
+.busca-campo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 18px;
+  color: var(--slate);
+}
+
+.busca-servico {
+  flex: 1;
+}
+
+.busca-cidade {
+  border-left: 1px solid var(--slate2);
+}
+
+.busca-icone {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.busca input,
+.busca select {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--dark-background);
+}
+
+.busca input {
+  flex: 1;
+  min-width: 0;
+}
+
+.busca input::placeholder {
+  color: var(--slate);
+}
+
+.busca-botao {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 999px;
+  background-color: var(--royal-purple);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.busca-botao:hover {
+  background-color: var(--royal-purple2);
+}
+
+
+/*  Mobile  */
+@media (max-width: 900px) {
+  .texto h1 {
+    font-size: 56px;
+  }
+
+  .texto p {
+    font-size: 24px;
+  }
+
+  .busca {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 24px;
+  }
+
+  .busca-campo {
+    padding: 12px 8px;
+  }
+
+  .busca-cidade {
+    border-left: none;
+    border-top: 1px solid var(--slate2);
+  }
+
+  .busca select {
+    flex: 1;
+  }
+
+  .busca-botao {
+    width: 100%;
+  }
+}

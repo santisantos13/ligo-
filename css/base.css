@@ -1,0 +1,40 @@
+:root {
+  /* Cores principais */
+  --royal-purple: #7955E8;
+  --purple-rose: #a655e8;
+  --royal-purple2: #4918db;
+  --deep-violet: #21183B;
+  --dark-background: #0B081A;
+
+
+  /* Cores secundárias */
+  --soft-lavender: #EEE9FC;
+  --white: #FFFFFF;
+  --slate: #64748B;
+  --slate2: #b2bee6;
+  --success: #16A085;
+}
+
+
+
+/*  Base  */
+body {
+  margin: 0px;
+  background-color: var(--dark-background);
+  color: var(--white);
+  font-family: "Host Grotesk", sans-serif;
+  font-size: 15px;
+  min-height: 100vh;
+}
+
+
+a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
+}
