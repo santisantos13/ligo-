@@ -1,0 +1,7 @@
+nome | hex escrito na imagem | hex real do circulo desenhado
+roxo-principal | #7955E8 | #7436FB
+roxo-escuro | #21183B | #201144
+lavanda-clara | #EEE9FC | #EAE5FD
+branco | #FFFFFF | #FEFEFE
+cinza-azulado | #64748B | #55617F
+verde | #16A085 | #02A189
