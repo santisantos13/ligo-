@@ -34,6 +34,7 @@ nav {
 .links a {
   padding: 11px 18px;
   border-radius: 999px;
+  white-space: nowrap;
 }
 
 .ativo {
@@ -43,7 +44,6 @@ nav {
 .botao {
   padding: 11px 18px;
   border-radius: 999px;
-
 }
 
 .botao-preenchido {
@@ -71,49 +71,62 @@ nav {
   background-color: var(--royal-purple2);
 }
 
-
-#categoria {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  field-sizing: content;
-
-  padding-right: 18px;
-  font-family: inherit;
-  font-size: 15px;
-  color: inherit;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.select-container {
+.categorias {
   position: relative;
-  display: inline-flex;
+}
+
+.categorias summary {
+  display: flex;
   align-items: center;
-  align-items: center;
-  width: fit-content;
-  color: var(--white);
+  gap: 8px;
   padding: 11px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  list-style: none;
+  transition: background-color 0.2s;
 }
 
-.select-seta {
-  position: absolute;
-  right: 18px;
-  width: 13px;
-  height: 13px;
-  pointer-events: none;
+.categorias summary::-webkit-details-marker {
+  display: none;
 }
 
-
-#categoria option {
+.categorias summary:hover {
   background-color: var(--deep-violet);
-  color: var(--white);
 }
 
-#categoria:focus-visible {
+.categorias summary:focus-visible {
   outline: 2px solid var(--royal-purple);
   outline-offset: 4px;
+}
+
+.categorias-seta {
+  width: 13px;
+  height: 13px;
+  transition: transform 0.2s;
+}
+
+.categorias[open] .categorias-seta {
+  transform: rotate(180deg);
+}
+
+.categorias-lista {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 270px;
+  margin: 8px 0 0;
+  padding: 8px;
+  list-style: none;
+  background-color: var(--dark-background);
+  border: 1px solid var(--deep-violet);
+  border-radius: 16px;
+  z-index: 10;
+}
+
+.categorias-lista a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 10px;
 }
 
 .logo {
@@ -192,12 +205,18 @@ nav {
     padding: 12px 14px;
   }
 
-  .select-container {
+  .categorias summary {
+    justify-content: space-between;
     padding: 12px 14px;
   }
 
-  .select-seta {
-    right: 14px;
+  .categorias-lista {
+    position: static;
+    min-width: 0;
+    margin: 4px 0 0;
+    padding: 0 0 0 14px;
+    background: none;
+    border: none;
   }
 
   .login-cadastro {

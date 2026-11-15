@@ -57,7 +57,9 @@
 }
 
 .busca-cidade {
+  position: relative;
   border-left: 1px solid var(--slate2);
+  padding: 0 8px;
 }
 
 .busca-icone {
@@ -66,23 +68,87 @@
   flex-shrink: 0;
 }
 
-.busca input,
-.busca select {
+.busca input {
   border: none;
   outline: none;
   background: transparent;
   font-family: inherit;
   font-size: 16px;
   color: var(--dark-background);
-}
-
-.busca input {
   flex: 1;
   min-width: 0;
 }
 
 .busca input::placeholder {
   color: var(--slate);
+}
+
+/* Seletor de Cidade estilizado como Categorias */
+.cidade-seletor {
+  position: relative;
+}
+
+.cidade-seletor summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: var(--dark-background);
+  font-size: 16px;
+  cursor: pointer;
+  list-style: none;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+.cidade-seletor summary::-webkit-details-marker {
+  display: none;
+}
+
+.cidade-seletor summary:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.cidade-seletor .busca-icone {
+  color: var(--slate);
+}
+
+.cidade-seletor[open] .categorias-seta {
+  transform: rotate(180deg);
+}
+
+.cidade-lista {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 0;
+  min-width: 220px;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  background-color: var(--dark-background);
+  border: 1px solid var(--deep-violet);
+  border-radius: 16px;
+  z-index: 20;
+}
+
+.cidade-lista button {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cidade-lista button:hover {
+  background-color: var(--deep-violet);
 }
 
 .busca-botao {
@@ -100,6 +166,41 @@
 
 .busca-botao:hover {
   background-color: var(--royal-purple2);
+}
+
+/*  Buscas populares  */
+.buscas-populares {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.buscas-titulo {
+  color: var(--slate2);
+}
+
+.buscas-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.buscas-lista a {
+  display: block;
+  padding: 8px 16px;
+  background-color: var(--deep-violet);
+  border-radius: 999px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.buscas-lista a:hover {
+  background-color: var(--royal-purple);
 }
 
 
@@ -128,13 +229,30 @@
   .busca-cidade {
     border-left: none;
     border-top: 1px solid var(--slate2);
+    padding: 8px 0 0;
   }
 
-  .busca select {
-    flex: 1;
+  .cidade-seletor,
+  .cidade-seletor summary {
+    width: 100%;
+  }
+
+  .cidade-seletor .categorias-seta {
+    margin-left: auto;
+  }
+
+  .cidade-lista {
+    width: 100%;
+    top: calc(100% + 6px);
   }
 
   .busca-botao {
     width: 100%;
+  }
+
+  .buscas-populares {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 }

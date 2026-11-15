@@ -34,25 +34,35 @@
 
         <ul class="links">
 
-          <li><a href="index.html" class="ativo" aria-current="page">Início</a></li>
+          <li><a href="index.html">Início</a></li>
 
           <li>
+            <details class="categorias">
+              <summary>
+                Categorias
+                <svg class="categorias-seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
 
-            <div class="select-container">
-              <select name="categoria" id="categoria" aria-label="Escolha uma categoria">
-                <option value="">Categorias</option>
-                <option value="editor-video">Editor de vídeos</option>
-                <option value="designer">Designer</option>
-              </select>
-
-              <svg class="select-seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </div>
-
+              <ul class="categorias-lista">
+                <li><a href="index.html?categoria=reparos-e-manutencao">Reparos e Manutenção</a></li>
+                <li><a href="index.html?categoria=eletrica">Elétrica</a></li>
+                <li><a href="index.html?categoria=hidraulica">Hidráulica</a></li>
+                <li><a href="index.html?categoria=reformas">Reformas</a></li>
+                <li><a href="index.html?categoria=limpeza">Limpeza</a></li>
+                <li><a href="index.html?categoria=tecnologia">Tecnologia</a></li>
+                <li><a href="index.html?categoria=desenvolvimento-web">Desenvolvimento Web</a></li>
+                <li><a href="index.html?categoria=criacao-de-sites">Criação de Sites</a></li>
+                <li><a href="index.html?categoria=e-commerce">E-commerce e Lojas Virtuais</a></li>
+                <li><a href="index.html?categoria=ui-ux-design">UI/UX e Design Web</a></li>
+                <li><a href="index.html?categoria=design-e-criacao">Design e Criação</a></li>
+                <li><a href="index.html?categoria=seo-e-marketing-digital">SEO e Marketing Digital</a></li>
+                <li><a href="index.html?categoria=suporte-e-manutencao-web">Suporte e Manutenção Web</a></li>
+              </ul>
+            </details>
           </li>
-
 
           <li><a href="info.html">Como funciona</a></li>
           <li><a href="sobre.html">Sobre</a></li>
@@ -90,24 +100,45 @@
       </div>
 
       <div class="busca-campo busca-cidade">
-        <svg class="busca-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-          <circle cx="12" cy="10" r="3"></circle>
-        </svg>
-        <select name="cidade" aria-label="Escolha sua cidade">
-          <option value="">Sua cidade</option>
-          <option value="belo-horizonte">Belo Horizonte</option>
-          <option value="contagem">Contagem</option>
-          <option value="betim">Betim</option>
-        </select>
+        <input type="hidden" name="cidade" id="cidade-input" value="">
+
+        <details class="cidade-seletor" id="cidade-seletor">
+          <summary>
+            <svg class="busca-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span id="cidade-texto">Sua cidade</span>
+            <svg class="categorias-seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+
+          <ul class="cidade-lista">
+            <li><button type="button" data-value="">Todas as cidades</button></li>
+            <li><button type="button" data-value="belo-horizonte">Belo Horizonte</button></li>
+            <li><button type="button" data-value="contagem">Contagem</button></li>
+            <li><button type="button" data-value="betim">Betim</button></li>
+          </ul>
+        </details>
       </div>
 
       <button type="submit" class="busca-botao">Buscar</button>
 
     </form>
 
-
+    <div class="buscas-populares">
+      <span class="buscas-titulo">Buscas populares:</span>
+      <ul class="buscas-lista">
+        <li><a href="index.html?servico=eletricista">Eletricista</a></li>
+        <li><a href="index.html?servico=encanador">Encanador</a></li>
+        <li><a href="index.html?servico=diarista">Diarista</a></li>
+        <li><a href="index.html?servico=desenvolvedor-web">Desenvolvedor Web</a></li>
+        <li><a href="index.html?servico=criacao-de-site">Criação de Site</a></li>
+      </ul>
+    </div>
 
   </main>
   <script src="js/script.js"></script>
