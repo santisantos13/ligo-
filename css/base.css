@@ -38,3 +38,12 @@ a {
   margin: auto;
   padding: 0 24px;
 }
+
+.destaque {
+  background-image: linear-gradient(to right,
+      var(--royal-purple),
+      var(--purple-rose));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}

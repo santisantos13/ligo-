@@ -5,15 +5,6 @@
   display: block;
 }
 
-.destaque {
-  background-image: linear-gradient(to right,
-      var(--royal-purple),
-      var(--purple-rose));
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
 .texto h1 {
   font-size: 80px;
   line-height: 1;
@@ -89,6 +80,7 @@
 }
 
 .cidade-seletor summary {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -133,6 +125,7 @@
 }
 
 .cidade-lista button {
+  box-sizing: border-box;
   display: block;
   width: 100%;
   padding: 10px 14px;
@@ -152,6 +145,7 @@
 }
 
 .busca-botao {
+  box-sizing: border-box;
   padding: 14px 28px;
   border: none;
   border-radius: 999px;
@@ -242,6 +236,7 @@
   }
 
   .cidade-lista {
+    box-sizing: border-box;
     width: 100%;
     top: calc(100% + 6px);
   }
