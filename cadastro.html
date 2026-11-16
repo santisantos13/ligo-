@@ -78,89 +78,87 @@
     </nav>
   </header>
 
-  <main>
-    <main class="container">
-      <div class="auth auth-cadastro">
+  <main class="container">
+    <div class="auth auth-cadastro">
 
-        <section class="auth-apresentacao">
-          <div class="auth-texto">
-            <h1>
-              Junte-se à
-              <span class="titulo-marca">
-                <img src="images/ligo-final/png/wordmark-fundo-escuro.png" alt="LIGO!">
-              </span>
-            </h1>
-            <p>Crie sua conta e tenha acesso a uma plataforma completa, segura e cheia de vantagens.</p>
+      <section class="auth-apresentacao">
+        <div class="auth-texto">
+          <h1>
+            Junte-se à
+            <span class="titulo-marca">
+              <img src="images/ligo-final/png/wordmark-fundo-escuro.png" alt="LIGO!">
+            </span>
+          </h1>
+          <p>Crie sua conta e tenha acesso a uma plataforma completa, segura e cheia de vantagens.</p>
 
-            <ul class="auth-beneficios">
-              <li>Encontre profissionais qualificados</li>
-              <li>Avalie e seja avaliado</li>
-              <li>Receba ofertas personalizadas</li>
-            </ul>
-          </div>
-        </section>
+          <ul class="auth-beneficios">
+            <li>Encontre profissionais qualificados</li>
+            <li>Avalie e seja avaliado</li>
+            <li>Receba ofertas personalizadas</li>
+          </ul>
+        </div>
+      </section>
 
-        <section class="auth-cartao">
-          <h2>Criar sua conta</h2>
-          <p class="descricao">Preencha os dados abaixo para começar</p>
+      <section class="auth-cartao">
+        <h2>Criar sua conta</h2>
+        <p class="descricao">Preencha os dados abaixo para começar</p>
 
-          <form class="formulario" action="">
-            <label for="nome">Nome completo</label>
-            <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo..." autocomplete="name"
-              required>
+        <form class="formulario" action="" method="post">
+          <label for="nome">Nome completo</label>
+          <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo..." autocomplete="name"
+            required>
 
-            <label for="email">E-mail</label>
-            <input type="email" name="email" id="email" placeholder="Digite seu e-mail..." autocomplete="email"
-              required>
+          <label for="email">E-mail</label>
+          <input type="email" name="email" id="email" placeholder="Digite seu e-mail..." autocomplete="email" required>
 
-            <label for="senha">Senha</label>
-            <input type="password" name="senha" id="senha" placeholder="Crie uma senha..." autocomplete="new-password"
-              minlength="8" required>
+          <label for="senha">Senha</label>
+          <input type="password" name="senha" id="senha" placeholder="Crie uma senha..." autocomplete="new-password"
+            minlength="8" required>
 
-            <label for="confirmar-senha">Confirme sua senha</label>
-            <input type="password" name="confirmar_senha" id="confirmar-senha" placeholder="Repita a senha..."
-              autocomplete="new-password" required>
+          <label for="confirmar-senha">Confirme sua senha</label>
+          <input type="password" name="confirmar_senha" id="confirmar-senha" placeholder="Repita a senha..."
+            autocomplete="new-password" required>
 
-            <fieldset class="tipo-conta">
-              <legend>Qual tipo de conta você deseja?</legend>
+          <fieldset class="tipo-conta">
+            <legend>Qual tipo de conta você deseja?</legend>
 
-              <div class="tipo-opcoes">
-                <label class="tipo-opcao">
-                  <input type="radio" name="tipo" value="cliente" checked required>
-                  <span class="tipo-opcao-cartao">
-                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                      <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                    <strong>Cliente</strong>
-                    <small>Busco por serviços</small>
-                  </span>
-                </label>
+            <div class="tipo-opcoes">
+              <label class="tipo-opcao">
+                <input type="radio" name="tipo" value="cliente" checked required>
+                <span class="tipo-opcao-cartao">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                  <strong>Cliente</strong>
+                  <small>Busco por serviços</small>
+                </span>
+              </label>
 
-                <label class="tipo-opcao">
-                  <input type="radio" name="tipo" value="profissional" required>
-                  <span class="tipo-opcao-cartao">
-                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                    </svg>
-                    <strong>Profissional</strong>
-                    <small>Ofereço serviços</small>
-                  </span>
-                </label>
-              </div>
-            </fieldset>
+              <label class="tipo-opcao">
+                <input type="radio" name="tipo" value="profissional" required>
+                <span class="tipo-opcao-cartao">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                  <strong>Profissional</strong>
+                  <small>Ofereço serviços</small>
+                </span>
+              </label>
+            </div>
+          </fieldset>
 
-            <button type="submit">Cadastrar</button>
-          </form>
+          <button type="submit">Cadastrar</button>
+        </form>
 
-          <p class="auth-troca">Já tem uma conta? <a href="login.html">Entrar</a></p>
-        </section>
+        <p class="auth-troca">Já tem uma conta? <a href="login.html">Entrar</a></p>
+      </section>
 
-      </div>
-    </main>
+    </div>
+
 
   </main>
 
