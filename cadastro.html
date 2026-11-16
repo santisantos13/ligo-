@@ -120,11 +120,13 @@
             autocomplete="new-password" required>
 
           <fieldset class="tipo-conta">
-            <legend>Qual tipo de conta você deseja?</legend>
+            <legend>
+              <legend>Como você quer usar a plataforma? Você pode escolher os dois.</legend>
+            </legend>
 
             <div class="tipo-opcoes">
               <label class="tipo-opcao">
-                <input type="radio" name="tipo" value="contratante" checked required>
+                <input type="radio" name="tipo" value="contratante">
                 <span class="tipo-opcao-cartao">
                   <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
                     stroke-linecap="round" stroke-linejoin="round">
@@ -137,7 +139,7 @@
               </label>
 
               <label class="tipo-opcao">
-                <input type="radio" name="tipo" value="prestador" required>
+                <input type="radio" name="tipo" value="prestador">
                 <span class="tipo-opcao-cartao">
                   <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
                     stroke-linecap="round" stroke-linejoin="round">
