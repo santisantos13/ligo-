@@ -6,13 +6,15 @@
   --deep-violet: #21183B;
   --dark-background: #0B081A;
 
-
   /* Cores secundárias */
   --soft-lavender: #EEE9FC;
   --white: #FFFFFF;
   --slate: #64748B;
   --slate2: #b2bee6;
   --success: #16A085;
+
+  /* Bordas */
+  --border-purple: rgba(121, 85, 232, 0.35);
 }
 
 
@@ -46,4 +48,13 @@ a {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  padding: 15px;
+  color: var(--slate2);
+  font-size: 13px;
 }
