@@ -4,19 +4,6 @@
   padding: 60px 0 80px;
 }
 
-/* Logo + "?" no título: ficam juntos na mesma linha */
-.titulo-marca {
-  white-space: nowrap;
-  color: var(--royal-purple);
-}
-
-.titulo-marca img {
-  width: 2.4em;
-  height: auto;
-  vertical-align: middle;
-}
-
-
 .escolha-perfil h1 {
   font-size: 56px;
   line-height: 1.1;

@@ -17,8 +17,6 @@
   --border-purple: rgba(121, 85, 232, 0.35);
 }
 
-
-
 /*  Base  */
 body {
   margin: 0px;
@@ -49,6 +47,18 @@ a {
   -webkit-background-clip: text;
   color: transparent;
 }
+
+.titulo-marca {
+  white-space: nowrap;
+  color: var(--royal-purple);
+}
+
+.titulo-marca img {
+  width: 2.4em;
+  height: auto;
+  vertical-align: middle;
+}
+
 
 footer {
   text-align: center;

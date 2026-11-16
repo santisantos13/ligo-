@@ -8,6 +8,15 @@
   background-image: radial-gradient(ellipse 45% 50% at 40% 50%, rgba(121, 85, 232, 0.22), transparent);
 }
 
+/* Cadastro*/
+.auth-cadastro {
+  align-items: start;
+}
+
+.auth-cadastro .auth-apresentacao {
+  padding-top: 48px;
+}
+
 /*  Coluna da esquerda  */
 .auth-apresentacao h1 {
   font-size: 56px;
@@ -80,7 +89,7 @@
   font-weight: 600;
 }
 
-.formulario input:not([type="checkbox"]) {
+.formulario input:not([type="checkbox"], [type="radio"]) {
   box-sizing: border-box;
   width: 100%;
   height: 46px;
@@ -97,7 +106,7 @@
   color: var(--slate);
 }
 
-.formulario input:not([type="checkbox"]):focus {
+.formulario input:not([type="checkbox"], [type="radio"]):focus {
   outline: none;
   border-color: var(--royal-purple);
 }
@@ -187,6 +196,77 @@
   height: 22px;
 }
 
+/*  Tipo de conta (cadastro)  */
+.tipo-conta {
+  min-width: 0;
+  margin: 20px 0 0;
+  padding: 0;
+  border: none;
+}
+
+.tipo-conta legend {
+  margin-bottom: 8px;
+  padding: 0;
+  font-weight: 600;
+}
+
+.tipo-opcoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.formulario .tipo-opcao {
+  position: relative;
+  display: block;
+  margin: 0;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.formulario .tipo-opcao input {
+  position: absolute;
+  opacity: 0;
+}
+
+.tipo-opcao-cartao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 8px;
+  border: 1px solid var(--border-purple);
+  border-radius: 12px;
+  background-color: var(--dark-background);
+  text-align: center;
+}
+
+.tipo-opcao-cartao svg {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 4px;
+  color: var(--purple-rose);
+}
+
+.tipo-opcao-cartao strong {
+  font-size: 15px;
+}
+
+.tipo-opcao-cartao small {
+  font-size: 12px;
+  color: var(--slate2);
+}
+
+.tipo-opcao input:checked+.tipo-opcao-cartao {
+  border-color: var(--royal-purple);
+  background-color: var(--deep-violet);
+}
+
+.tipo-opcao input:focus-visible+.tipo-opcao-cartao {
+  outline: 2px solid var(--royal-purple);
+  outline-offset: 2px;
+}
+
 .auth-troca {
   margin: 20px 0 0;
   text-align: center;
@@ -224,5 +304,9 @@
 
   .auth-cartao {
     padding: 24px;
+  }
+
+  .auth-cadastro .auth-apresentacao {
+    padding-top: 0;
   }
 }
