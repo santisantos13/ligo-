@@ -4,16 +4,18 @@
   padding: 60px 0 80px;
 }
 
-/* Barrinha roxa decorativa acima do título */
-.escolha-perfil::before {
-  content: "";
-  display: block;
-  width: 72px;
-  height: 4px;
-  margin: 0 auto 32px;
-  border-radius: 999px;
-  background-color: var(--royal-purple);
+/* Logo + "?" no título: ficam juntos na mesma linha */
+.titulo-marca {
+  white-space: nowrap;
+  color: var(--royal-purple);
 }
+
+.titulo-marca img {
+  width: 2.4em;
+  height: auto;
+  vertical-align: middle;
+}
+
 
 .escolha-perfil h1 {
   font-size: 56px;
@@ -100,8 +102,6 @@
 }
 
 
-/*  Telas médias (dois cards lado a lado, mas mais estreitos)  */
-/* Fica ANTES do bloco de 900px: se dois blocos mudam a mesma propriedade, vale o que vem por último */
 @media (max-width: 1100px) {
   .escolha-perfil h1 {
     font-size: 48px;
@@ -178,28 +178,72 @@
   }
 }
 
-/*  Celulares pequenos  */
+/*  Celulares  */
 @media (max-width: 480px) {
+  .escolha-perfil {
+    /* --u vale 1px num celular de 360x800 (o seu Galaxy A55).
+       Em telas menores, encolhe; em maiores, cresce até no máximo 1.2px */
+    --u: min(0.2778vw, 0.125svh, 1.2px);
+    padding: calc(12 * var(--u)) 0 calc(24 * var(--u));
+  }
+
   .escolha-perfil h1 {
-    font-size: 30px;
+    font-size: max(24px, calc(28 * var(--u)));
+    margin-bottom: calc(8 * var(--u));
+  }
+
+  .escolha-perfil>p {
+    font-size: max(14px, calc(15 * var(--u)));
+    margin-bottom: calc(20 * var(--u));
+  }
+
+  .cards-perfil {
+    gap: calc(12 * var(--u));
+  }
+
+  .card-perfil {
+    padding: calc(16 * var(--u));
+    gap: calc(14 * var(--u));
   }
 
   .card-conteudo {
-    gap: 16px;
+    gap: calc(12 * var(--u));
+  }
+
+  .card-tag {
+    padding: calc(4 * var(--u)) calc(12 * var(--u));
+    font-size: max(12px, calc(13 * var(--u)));
   }
 
   .card-texto h2 {
-    font-size: 22px;
+    font-size: max(18px, calc(20 * var(--u)));
+    margin: calc(12 * var(--u)) 0 calc(6 * var(--u));
+  }
+
+  .card-texto p {
+    font-size: max(13px, calc(14 * var(--u)));
+    line-height: 1.35;
   }
 
   .card-icone {
-    width: 56px;
-    height: 56px;
-    border-radius: 16px;
+    width: max(36px, calc(44 * var(--u)));
+    height: max(36px, calc(44 * var(--u)));
+    border-radius: calc(14 * var(--u));
   }
 
   .card-icone svg {
-    width: 28px;
-    height: 28px;
+    width: calc(24 * var(--u));
+    height: calc(24 * var(--u));
+  }
+
+  .card-acao {
+    font-size: max(15px, calc(16 * var(--u)));
+  }
+}
+
+/* Telas muito baixas (ex.: iPhone SE): some a descrição para os dois cards caberem */
+@media (max-width: 480px) and (max-height: 620px) {
+  .card-texto p {
+    display: none;
   }
 }
