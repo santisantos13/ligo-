@@ -16,6 +16,10 @@ def cadastro():
   papeis_marcados = [tipo] if tipo in ("contratante", "prestador") else []
   return render_template("cadastro.html")
 
+@app.route("/contratante")
+def contratante():
+  return render_template("contratante.html")
+
 
 if __name__ == "__main__":
   app.run(debug=True)

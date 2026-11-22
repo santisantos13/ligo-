@@ -35,7 +35,7 @@
 
         <ul class="links">
 
-          <li><a href="contratante.html">Início</a></li>
+          <li><a href="{{ url_for('contratante') }}">Início</a></li>
 
           <li>
             <details class="categorias">
@@ -48,19 +48,22 @@
               </summary>
 
               <ul class="categorias-lista">
-                <li><a href="contratante.html?categoria=reparos-e-manutencao">Reparos e Manutenção</a></li>
-                <li><a href="contratante.html?categoria=eletrica">Elétrica</a></li>
-                <li><a href="contratante.html?categoria=hidraulica">Hidráulica</a></li>
-                <li><a href="contratante.html?categoria=reformas">Reformas</a></li>
-                <li><a href="contratante.html?categoria=limpeza">Limpeza</a></li>
-                <li><a href="contratante.html?categoria=tecnologia">Tecnologia</a></li>
-                <li><a href="contratante.html?categoria=desenvolvimento-web">Desenvolvimento Web</a></li>
-                <li><a href="contratante.html?categoria=criacao-de-sites">Criação de Sites</a></li>
-                <li><a href="contratante.html?categoria=e-commerce">E-commerce e Lojas Virtuais</a></li>
-                <li><a href="contratante.html?categoria=ui-ux-design">UI/UX e Design Web</a></li>
-                <li><a href="contratante.html?categoria=design-e-criacao">Design e Criação</a></li>
-                <li><a href="contratante.html?categoria=seo-e-marketing-digital">SEO e Marketing Digital</a></li>
-                <li><a href="contratante.html?categoria=suporte-e-manutencao-web">Suporte e Manutenção Web</a></li>
+                <li><a href="{{ url_for('contratante', categoria='reparos-e-manutencao') }}">Reparos e Manutenção</a>
+                </li>
+                <li><a href="{{ url_for('contratante', categoria='eletrica') }}">Elétrica</a></li>
+                <li><a href="{{ url_for('contratante', categoria='hidraulica') }}">Hidráulica</a></li>
+                <li><a href="{{ url_for('contratante', categoria='reformas') }}">Reformas</a></li>
+                <li><a href="{{ url_for('contratante', categoria='limpeza') }}">Limpeza</a></li>
+                <li><a href="{{ url_for('contratante', categoria='tecnologia') }}">Tecnologia</a></li>
+                <li><a href="{{ url_for('contratante', categoria='desenvolvimento-web') }}">Desenvolvimento Web</a></li>
+                <li><a href="{{ url_for('contratante', categoria='criacao-de-sites') }}">Criação de Sites</a></li>
+                <li><a href="{{ url_for('contratante', categoria='e-commerce') }}">E-commerce e Lojas Virtuais</a></li>
+                <li><a href="{{ url_for('contratante', categoria='ui-ux-design') }}">UI/UX e Design Web</a></li>
+                <li><a href="{{ url_for('contratante', categoria='design-e-criacao') }}">Design e Criação</a></li>
+                <li><a href="{{ url_for('contratante', categoria='seo-e-marketing-digital') }}">SEO e Marketing
+                    Digital</a></li>
+                <li><a href="{{ url_for('contratante', categoria='suporte-e-manutencao-web') }}">Suporte e Manutenção
+                    Web</a></li>
               </ul>
             </details>
           </li>
@@ -72,6 +75,7 @@
         <div class="login-cadastro">
           <a href="{{ url_for('login') }}" class="botao botao-contorno">Entrar</a>
           <a href="{{ url_for('cadastro') }}" class="botao botao-preenchido">Cadastrar</a>
+        </div>
 
       </div>
 

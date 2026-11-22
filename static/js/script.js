@@ -11,13 +11,12 @@ if (botaoMenu && menu) {
 }
 
 // Marca o link ativo no menu conforme a página atual
-const paginaAtual = window.location.pathname.split("/").pop() || "index.html";
+const paginaAtual = window.location.pathname;
 const linksMenu = document.querySelectorAll(".links > li > a");
 
 linksMenu.forEach(function (link) {
-  const hrefLink = link.getAttribute("href");
-
-  if (hrefLink === paginaAtual) {
+  // link.pathname já vem resolvido 
+  if (link.pathname === paginaAtual) {
     link.classList.add("ativo");
     link.setAttribute("aria-current", "page");
   }

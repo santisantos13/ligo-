@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/hero.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="texto">
+  <h1>
+    <span class="linha-1">Pessoas certas.</span>
+    <span class="linha-2"><span class="destaque">Conexões</span> reais.</span>
+  </h1>
+
+  <p>Encontre profissionais e transforme suas ideias em realidade.</p>
+</div>
+
+<form class="busca" action="#" method="get">
+
+  <div class="busca-campo busca-servico">
+    <svg class="busca-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+    <input type="text" name="servico" placeholder="O que você precisa?" aria-label="Qual serviço você procura">
+  </div>
+
+  <div class="busca-campo busca-cidade">
+    <input type="hidden" name="cidade" id="cidade-input" value="">
+
+    <details class="cidade-seletor" id="cidade-seletor">
+      <summary>
+        <svg class="busca-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <span id="cidade-texto">Sua cidade</span>
+        <svg class="categorias-seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </summary>
+
+      <ul class="cidade-lista">
+        <li><button type="button" data-value="">Todas as cidades</button></li>
+        <li><button type="button" data-value="belo-horizonte">Belo Horizonte</button></li>
+        <li><button type="button" data-value="contagem">Contagem</button></li>
+        <li><button type="button" data-value="betim">Betim</button></li>
+      </ul>
+    </details>
+  </div>
+
+  <button type="submit" class="busca-botao">Buscar</button>
+
+</form>
+
+<div class="buscas-populares">
+  <span class="buscas-titulo">Buscas populares:</span>
+  <ul class="buscas-lista">
+    <li><a href="{{ url_for('contratante', servico='eletricista') }}">Eletricista</a></li>
+    <li><a href="{{ url_for('contratante', servico='encanador') }}">Encanador</a></li>
+    <li><a href="{{ url_for('contratante', servico='diarista') }}">Diarista</a></li>
+    <li><a href="{{ url_for('contratante', servico='desenvolvedor-web') }}">Desenvolvedor Web</a></li>
+    <li><a href="{{ url_for('contratante', servico='criacao-de-site') }}">Criação de Site</a></li>
+  </ul>
+</div>
+
+{% endblock %}
