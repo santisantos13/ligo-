@@ -25,6 +25,14 @@ def contratante():
 def prestador():
   return render_template("prestador.html")
 
+@app.route("/como-funciona")
+def como_funciona():
+  return render_template("info.html")
+
+@app.route("/sobre")
+def sobre():
+  return render_template("sobre.html")
+
 
 if __name__ == "__main__":
   app.run(debug=True)
