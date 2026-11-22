@@ -35,7 +35,7 @@
 
         <ul class="links">
 
-          <li><a href="{{ url_for('contratante') }}">Início</a></li>
+          <li><a href="{% block link_inicio %}{{ url_for('contratante') }}{% endblock %}">Início</a></li>
 
           <li>
             <details class="categorias">
