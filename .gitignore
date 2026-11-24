@@ -3,12 +3,6 @@
 .env.*
 !.env.example
 
-# Python
-venv/
-.venv/
-__pycache__/
-*.pyc
-
 # Bancos de dados locais
 *.db
 *.sqlite3

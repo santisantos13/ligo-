@@ -52,3 +52,16 @@ document.addEventListener("click", function (event) {
     categoriasSeletor.removeAttribute("open");
   }
 });
+
+// Cadastro: marca o tipo de conta conforme o parâmetro ?tipo= da URL
+// (ex.: cadastro.html?tipo=prestador)
+const parametrosUrl = new URLSearchParams(window.location.search);
+const tipoConta = parametrosUrl.get("tipo");
+
+if (tipoConta === "contratante" || tipoConta === "prestador") {
+  const caixaTipo = document.querySelector('input[name="papeis"][value="' + tipoConta + '"]');
+
+  if (caixaTipo) {
+    caixaTipo.checked = true;
+  }
+}

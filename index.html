@@ -11,21 +11,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/escolha.css') }}">
+  <link rel="stylesheet" href="static/css/base.css">
+  <link rel="stylesheet" href="static/css/header.css">
+  <link rel="stylesheet" href="static/css/escolha.css">
 </head>
 
 <body>
   <header>
 
     <nav class="container">
-      <a href="{{ url_for('index') }}">
-        <img src="{{ url_for('static', filename='images/ligo-final/png/logo-principal-fundo-escuro.png') }}"
+      <a href="index.html">
+        <img src="static/images/ligo-final/png/logo-principal-fundo-escuro.png"
           alt="Ligo! - Página inicial" class="logo">
       </a>
 
-      <a href="{{ url_for('login') }}" class="botao botao-contorno">Entrar</a>
+      <a href="login.html" class="botao botao-contorno">Entrar</a>
     </nav>
   </header>
 
@@ -34,14 +34,14 @@
       <h1>
         Escolha como usar o
         <span class="titulo-marca">
-          <img src="{{ url_for('static', filename='images/ligo-final/png/wordmark-fundo-escuro.png') }}" alt="LIGO!">
+          <img src="static/images/ligo-final/png/wordmark-fundo-escuro.png" alt="LIGO!">
         </span>
       </h1>
       <p>Escolha seu perfil para acessar uma experiência feita para você.</p>
 
       <div class="cards-perfil">
 
-        <a href="{{ url_for('prestador') }}" class="card-perfil">
+        <a href="prestador.html" class="card-perfil">
           <div class="card-conteudo">
             <div class="card-texto">
               <span class="card-tag">01 · Prestadores</span>
@@ -61,7 +61,7 @@
           <span class="card-acao">Acessar área →</span>
         </a>
 
-        <a href="{{ url_for('contratante') }}" class="card-perfil">
+        <a href="contratante.html" class="card-perfil">
           <div class="card-conteudo">
             <div class="card-texto">
               <span class="card-tag">02 · Contratantes</span>
