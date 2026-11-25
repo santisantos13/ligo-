@@ -91,9 +91,9 @@
           <p>Acesse sua conta e continue conectando-se com os melhores profissionais.</p>
 
           <ul class="auth-beneficios">
-            <li>Gerencie seus pedidos</li>
+            <li>Gerencie suas solicitações</li>
             <li>Acompanhe seus serviços</li>
-            <li>Receba notificações exclusivas</li>
+            <li>Encontre profissionais perto de você</li>
           </ul>
         </div>
 
@@ -103,7 +103,9 @@
         <h2>Entrar na sua conta</h2>
         <p class="descricao">Use seu e-mail e senha para acessar</p>
 
-        <form class="formulario" method="post">
+        <form class="formulario" id="formulario-login" method="post" novalidate>
+          <p class="formulario-erro" id="login-erro" role="alert" hidden></p>
+
           <label for="email">E-mail</label>
           <input type="email" name="email" id="email" placeholder="Digite seu e-mail..." autocomplete="email" required>
 
@@ -173,6 +175,7 @@
   </footer>
 
   <script src="static/js/script.js"></script>
+  <script src="static/js/autenticacao.js"></script>
 
 </body>
 
