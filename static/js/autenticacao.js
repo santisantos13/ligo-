@@ -111,3 +111,35 @@ if (formularioCadastro) {
     limparErros(formularioCadastro, areaMensagem);
   });
 }
+
+// ---------- Recuperação de senha ----------
+
+const formularioRecuperacao = document.querySelector("#formulario-recuperacao");
+
+if (formularioRecuperacao) {
+  const campoEmail = formularioRecuperacao.querySelector("#email");
+  const areaMensagem = formularioRecuperacao.querySelector("#recuperacao-erro");
+
+  formularioRecuperacao.addEventListener("submit", function (event) {
+    event.preventDefault();
+    limparErros(formularioRecuperacao, areaMensagem);
+
+    const email = campoEmail.value.trim();
+    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (!emailValido) {
+      marcarInvalido(campoEmail, areaMensagem, "Digite um e-mail válido.");
+      return;
+    }
+
+    mostrarMensagem(
+      areaMensagem,
+      "Se houver uma conta com esse e-mail, enviaremos as instruções. (Simulação: ainda não há servidor.)",
+      "sucesso"
+    );
+  });
+
+  formularioRecuperacao.addEventListener("input", function () {
+    limparErros(formularioRecuperacao, areaMensagem);
+  });
+}
