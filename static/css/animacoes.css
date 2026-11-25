@@ -4,6 +4,7 @@
   --suavizacao: cubic-bezier(0.22, 1, 0.36, 1);
   --elevacao: -2px;
   --brilho: 0 6px 18px rgba(121, 85, 232, 0.35);
+  --brilho-card: 0 12px 32px rgba(121, 85, 232, 0.35), 0 0 0 1px var(--royal-purple);
   --revelar-distancia: 20px;
 }
 
@@ -98,6 +99,50 @@ summary:focus-visible {
   .menu.aberto {
     animation: surgir var(--duracao) var(--suavizacao);
   }
+}
+
+/*  Cards da página inicial  */
+.card-perfil {
+  transition:
+    transform var(--duracao) var(--suavizacao),
+    border-color var(--duracao),
+    box-shadow var(--duracao);
+}
+
+.card-icone,
+.card-icone img,
+.card-acao {
+  transition: transform 0.3s var(--suavizacao);
+}
+
+@media (hover: hover) {
+
+  .card-perfil:hover,
+  .card-perfil:focus-visible {
+    transform: translateY(var(--elevacao));
+    border-color: var(--royal-purple);
+    box-shadow: var(--brilho-card);
+  }
+
+  .card-perfil:hover .card-icone,
+  .card-perfil:focus-visible .card-icone {
+    transform: scale(1.06);
+  }
+
+  .card-perfil:hover .card-icone img,
+  .card-perfil:focus-visible .card-icone img {
+    transform: rotate(-6deg) scale(1.04);
+  }
+
+  .card-perfil:hover .card-acao,
+  .card-perfil:focus-visible .card-acao {
+    transform: translateX(4px);
+  }
+}
+
+.card-perfil:active {
+  transform: scale(0.99);
+  box-shadow: none;
 }
 
 /*  Movimento reduzido  */
