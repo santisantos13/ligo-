@@ -145,6 +145,71 @@ summary:focus-visible {
   box-shadow: none;
 }
 
+/*  Página do contratante  */
+.texto h1 .linha-1,
+.texto h1 .linha-2,
+.texto p,
+.busca,
+.buscas-populares {
+  animation: entrada 0.3s var(--suavizacao) backwards;
+}
+
+.texto h1 .linha-2 {
+  animation-delay: 0.05s;
+}
+
+.texto p {
+  animation-delay: 0.1s;
+}
+
+.busca {
+  animation-delay: 0.15s;
+  transition: box-shadow var(--duracao);
+}
+
+.buscas-populares {
+  animation-delay: 0.2s;
+}
+
+.busca:focus-within {
+  box-shadow: 0 0 0 4px rgba(121, 85, 232, 0.25), var(--brilho);
+}
+
+.busca-icone {
+  transition: color var(--duracao);
+}
+
+.busca-campo:focus-within .busca-icone {
+  color: var(--royal-purple);
+}
+
+.cidade-seletor[open] .cidade-lista {
+  animation: surgir var(--duracao) var(--suavizacao);
+}
+
+.busca-botao,
+.buscas-lista a {
+  transition:
+    background-color var(--duracao),
+    transform var(--duracao) var(--suavizacao),
+    box-shadow var(--duracao);
+}
+
+@media (hover: hover) {
+
+  .busca-botao:hover,
+  .buscas-lista a:hover {
+    transform: translateY(var(--elevacao));
+    box-shadow: var(--brilho);
+  }
+}
+
+.busca-botao:active,
+.buscas-lista a:active {
+  transform: scale(0.97);
+  box-shadow: none;
+}
+
 /*  Movimento reduzido  */
 @media (prefers-reduced-motion: reduce) {
 
@@ -153,6 +218,7 @@ summary:focus-visible {
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
