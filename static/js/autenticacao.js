@@ -53,4 +53,8 @@ if (formularioLogin) {
       "sucesso"
     );
   });
+
+  formularioLogin.addEventListener("input", function () {
+    limparErros(formularioLogin, areaMensagem);
+  });
 }
