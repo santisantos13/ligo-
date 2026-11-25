@@ -54,12 +54,38 @@ main {
   }
 }
 
-.auth-beneficios li.revelar:nth-child(2) {
-  transition-delay: 0.15s;
+/*  Cards de benefício  */
+.beneficio {
+  transition:
+    border-color var(--duracao),
+    box-shadow var(--duracao);
 }
 
-.auth-beneficios li.revelar:nth-child(3) {
-  transition-delay: 0.3s;
+.beneficio-icone {
+  transition: transform 0.3s var(--suavizacao);
+}
+
+@media (scripting: enabled) {
+  .beneficio.revelar {
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s ease,
+      border-color var(--duracao),
+      box-shadow var(--duracao);
+  }
+}
+
+/*  Escalonamento da lista (só opacidade e transform; borda e sombra sem atraso)  */
+.revelar:nth-child(2) {
+  transition-delay: 0.15s, 0.15s, 0s, 0s;
+}
+
+.revelar:nth-child(3) {
+  transition-delay: 0.3s, 0.3s, 0s, 0s;
+}
+
+.revelar:nth-child(4) {
+  transition-delay: 0.45s, 0.45s, 0s, 0s;
 }
 
 /*  Foco por teclado  */
@@ -145,7 +171,7 @@ summary:focus-visible {
   box-shadow: none;
 }
 
-/*  Página do contratante  */
+/*  Entrada do hero (contratante e prestador)  */
 .texto h1 .linha-1,
 .texto h1 .linha-2,
 .texto p,
@@ -169,6 +195,10 @@ summary:focus-visible {
 
 .buscas-populares {
   animation-delay: 0.2s;
+}
+
+.texto .botao-grande {
+  animation: entrada 0.3s var(--suavizacao) 0.15s backwards;
 }
 
 .busca:focus-within {
@@ -208,6 +238,18 @@ summary:focus-visible {
 .buscas-lista a:active {
   transform: scale(0.97);
   box-shadow: none;
+}
+
+/*  Cards de benefício do prestador  */
+@media (hover: hover) {
+  .beneficio:hover {
+    border-color: var(--royal-purple);
+    box-shadow: var(--brilho-card);
+  }
+
+  .beneficio:hover .beneficio-icone {
+    transform: scale(1.08) rotate(-4deg);
+  }
 }
 
 /*  Movimento reduzido  */
