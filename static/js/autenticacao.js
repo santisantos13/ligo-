@@ -21,6 +21,10 @@ function marcarInvalido(campo, area, texto) {
   campo.focus();
 }
 
+function formatoEmailValido(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
 // ---------- Login ----------
 
 const formularioLogin = document.querySelector("#formulario-login");
@@ -35,7 +39,7 @@ if (formularioLogin) {
     limparErros(formularioLogin, areaMensagem);
 
     const email = campoEmail.value.trim();
-    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const emailValido = formatoEmailValido(email);
 
     if (!emailValido) {
       marcarInvalido(campoEmail, areaMensagem, "Digite um e-mail válido.");
@@ -76,7 +80,7 @@ if (formularioCadastro) {
 
     const nome = campoNome.value.trim();
     const email = campoEmail.value.trim();
-    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const emailValido = formatoEmailValido(email);
     const senha = campoSenha.value;
     const confirmacao = campoConfirmar.value;
 
@@ -125,7 +129,7 @@ if (formularioRecuperacao) {
     limparErros(formularioRecuperacao, areaMensagem);
 
     const email = campoEmail.value.trim();
-    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const emailValido = formatoEmailValido(email);
 
     if (!emailValido) {
       marcarInvalido(campoEmail, areaMensagem, "Digite um e-mail válido.");
