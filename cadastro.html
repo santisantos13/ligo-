@@ -98,7 +98,7 @@
           <ul class="auth-beneficios">
             <li>Encontre profissionais qualificados</li>
             <li>Avalie e seja avaliado</li>
-            <li>Receba ofertas personalizadas</li>
+            <li>Construa sua reputação na plataforma</li>
           </ul>
         </div>
       </section>
@@ -107,7 +107,9 @@
         <h2>Criar sua conta</h2>
         <p class="descricao">Preencha os dados abaixo para começar</p>
 
-        <form class="formulario" method="post">
+        <form class="formulario" id="formulario-cadastro" method="post" novalidate>
+          <p class="formulario-erro" id="cadastro-erro" role="alert" hidden></p>
+
           <label for="nome">Nome completo</label>
           <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo..." autocomplete="name" required>
 
@@ -168,6 +170,7 @@
   </footer>
 
   <script src="static/js/script.js"></script>
+  <script src="static/js/autenticacao.js"></script>
 
 </body>
 
