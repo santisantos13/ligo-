@@ -1,0 +1,114 @@
+/*  Variáveis de animação  */
+:root {
+  --duracao: 0.2s;
+  --suavizacao: cubic-bezier(0.22, 1, 0.36, 1);
+  --elevacao: -2px;
+  --brilho: 0 6px 18px rgba(121, 85, 232, 0.35);
+  --revelar-distancia: 20px;
+}
+
+/*  Movimentos reutilizáveis  */
+@keyframes surgir {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes entrada {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/*  Entrada da página  */
+main {
+  animation: entrada 0.4s var(--suavizacao);
+}
+
+/*  Revelar ao rolar  */
+@media (scripting: enabled) {
+  .revelar {
+    opacity: 0;
+    transform: translateY(var(--revelar-distancia));
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s ease;
+  }
+
+  .revelar.visivel {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.auth-beneficios li.revelar:nth-child(2) {
+  transition-delay: 0.15s;
+}
+
+.auth-beneficios li.revelar:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+/*  Foco por teclado  */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--royal-purple);
+  outline-offset: 4px;
+}
+
+/*  Botões  */
+.botao {
+  transition:
+    background-color var(--duracao),
+    transform var(--duracao) var(--suavizacao),
+    box-shadow var(--duracao);
+}
+
+@media (hover: hover) {
+  .botao:hover {
+    transform: translateY(var(--elevacao));
+    box-shadow: var(--brilho);
+  }
+}
+
+.botao:active {
+  transform: scale(0.97);
+  box-shadow: none;
+}
+
+/*  Menus suspensos e menu do celular  */
+.categorias[open] .categorias-lista {
+  animation: surgir var(--duracao) var(--suavizacao);
+}
+
+@media (max-width: 900px) {
+  .menu.aberto {
+    animation: surgir var(--duracao) var(--suavizacao);
+  }
+}
+
+/*  Movimento reduzido  */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

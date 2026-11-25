@@ -1,0 +1,22 @@
+/*  Fundos decorativos das páginas  */
+[class^="fundo-"] {
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
+.fundo-direita {
+  background-image: url("../images/fundo/ondas.svg");
+}
+
+.fundo-esquerda {
+  background-image: url("../images/fundo/ondas-esquerda.svg");
+}
+
+.fundo-baixo {
+  background-image: url("../images/fundo/ondas-baixo.svg");
+}
+
+.fundo-diagonal {
+  background-image: url("../images/fundo/ondas-diagonal.svg");
+}

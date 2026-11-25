@@ -65,3 +65,23 @@ if (tipoConta === "contratante" || tipoConta === "prestador") {
     caixaTipo.checked = true;
   }
 }
+
+// Revelar ao rolar: mostra os elementos .revelar quando entram na tela
+const elementosRevelar = document.querySelectorAll(".revelar");
+
+if (elementosRevelar.length > 0) {
+  const observador = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (entrada) {
+      if (!entrada.isIntersecting) {
+        return;
+      }
+
+      entrada.target.classList.add("visivel");
+      observador.unobserve(entrada.target);
+    });
+  }, { threshold: 0.2 });
+
+  elementosRevelar.forEach(function (elemento) {
+    observador.observe(elemento);
+  });
+}
