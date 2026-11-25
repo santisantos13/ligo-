@@ -114,6 +114,68 @@ if (formularioCadastro) {
   formularioCadastro.addEventListener("input", function () {
     limparErros(formularioCadastro, areaMensagem);
   });
+
+  const textoDescricao = document.querySelector("#cadastro-descricao");
+  const itensBeneficios = document.querySelectorAll("#cadastro-beneficios li");
+  const caixaContratante = formularioCadastro.querySelector('input[name="papeis"][value="contratante"]');
+  const caixaPrestador = formularioCadastro.querySelector('input[name="papeis"][value="prestador"]');
+
+  const textosPorPapel = {
+    nenhum: {
+      descricao: "Crie sua conta e tenha acesso a uma plataforma completa, segura e cheia de vantagens.",
+      beneficios: [
+        "Encontre profissionais qualificados",
+        "Avalie e seja avaliado",
+        "Construa sua reputação na plataforma"
+      ]
+    },
+    contratante: {
+      descricao: "Publique solicitações, receba propostas e contrate o profissional certo.",
+      beneficios: [
+        "Publique solicitações do que você precisa",
+        "Compare propostas de profissionais",
+        "Avalie quem realizou o serviço"
+      ]
+    },
+    prestador: {
+      descricao: "Divulgue seus serviços, encontre solicitações e envie propostas para conquistar clientes.",
+      beneficios: [
+        "Divulgue seus serviços",
+        "Envie propostas para solicitações",
+        "Construa sua reputação na plataforma"
+      ]
+    },
+    ambos: {
+      descricao: "Contrate profissionais e ofereça seus serviços, tudo com a mesma conta.",
+      beneficios: [
+        "Contrate profissionais qualificados",
+        "Ofereça seus serviços",
+        "Avalie e seja avaliado"
+      ]
+    }
+  };
+
+  function atualizarTextos() {
+    let situacao = "nenhum";
+
+    if (caixaContratante.checked && caixaPrestador.checked) {
+      situacao = "ambos";
+    } else if (caixaContratante.checked) {
+      situacao = "contratante";
+    } else if (caixaPrestador.checked) {
+      situacao = "prestador";
+    }
+
+    const textos = textosPorPapel[situacao];
+    textoDescricao.textContent = textos.descricao;
+
+    itensBeneficios.forEach(function (item, indice) {
+      item.textContent = textos.beneficios[indice];
+    });
+  }
+
+  formularioCadastro.addEventListener("change", atualizarTextos);
+  atualizarTextos();
 }
 
 // ---------- Recuperação de senha ----------
