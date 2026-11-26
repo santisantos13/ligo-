@@ -1,0 +1,155 @@
+/*  Topo  */
+.info-hero {
+  padding-top: 40px;
+}
+
+.info-hero h1 {
+  max-width: 1100px;
+  margin: 0 0 20px;
+  font-size: 56px;
+  line-height: 1.05;
+}
+
+.info-hero .destaque {
+  white-space: nowrap;
+}
+
+.info-hero p {
+  max-width: 520px;
+  margin: 0;
+  color: var(--slate2);
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+/*  Etapas  */
+.etapas-lista {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 48px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.etapa {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background-image: linear-gradient(145deg, var(--deep-violet), var(--dark-background));
+  border: 1px solid var(--border-purple);
+  border-radius: 20px;
+}
+
+.etapa-numero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background-color: var(--royal-purple);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.etapa h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.etapa-lado + .etapa-lado {
+  padding-top: 16px;
+  border-top: 1px solid var(--border-purple);
+}
+
+.etapa-rotulo {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--purple-rose);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.etapa p {
+  margin: 0;
+  color: var(--slate2);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/*  Chamada final  */
+.info-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 16px;
+  padding: 32px 40px;
+  background-image: linear-gradient(145deg, var(--deep-violet), var(--dark-background));
+  border: 1px solid var(--border-purple);
+  border-radius: 20px;
+}
+
+.info-cta h2 {
+  margin: 0 0 6px;
+  font-size: 26px;
+}
+
+.info-cta p {
+  margin: 0;
+  color: var(--slate2);
+  font-size: 15px;
+}
+
+.info-cta-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.info-cta .botao {
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+/*  Mobile  */
+@media (max-width: 900px) {
+  .info-hero h1 {
+    font-size: 40px;
+  }
+
+  .info-hero p {
+    font-size: 20px;
+  }
+
+  .etapas-lista {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .etapas-lista {
+    grid-template-columns: 1fr;
+  }
+
+  .info-cta-botoes {
+    flex-direction: column;
+    align-self: stretch;
+  }
+
+  .info-cta .botao {
+    text-align: center;
+  }
+}

@@ -72,19 +72,22 @@ main {
   }
 }
 
-/*  Cards de benefício  */
-.beneficio {
+/*  Cards de benefício e etapas  */
+.beneficio,
+.etapa {
   transition:
     border-color var(--duracao),
     box-shadow var(--duracao);
 }
 
-.beneficio-icone {
+.beneficio-icone,
+.etapa-numero {
   transition: transform 0.3s var(--suavizacao);
 }
 
 @media (scripting: enabled) {
-  .beneficio.revelar {
+  .beneficio.revelar,
+  .etapa.revelar {
     transition:
       opacity 0.8s ease,
       transform 0.8s ease,
@@ -260,12 +263,14 @@ summary:focus-visible {
 
 /*  Cards de benefício do prestador  */
 @media (hover: hover) {
-  .beneficio:hover {
+  .beneficio:hover,
+  .etapa:hover {
     border-color: var(--royal-purple);
     box-shadow: var(--brilho-card);
   }
 
-  .beneficio:hover .beneficio-icone {
+  .beneficio:hover .beneficio-icone,
+  .etapa:hover .etapa-numero {
     transform: scale(1.08) rotate(-4deg);
   }
 }

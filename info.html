@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Info - Ligo!</title>
+  <title>Como funciona - Ligo!</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,7 @@
 
   <link rel="stylesheet" href="static/css/base.css">
   <link rel="stylesheet" href="static/css/header.css">
+  <link rel="stylesheet" href="static/css/info.css">
   <link rel="stylesheet" href="static/css/fundos.css">
   <link rel="stylesheet" href="static/css/animacoes.css">
 </head>
@@ -22,8 +23,8 @@
 
     <nav class="container">
       <a href="index.html">
-        <img src="static/images/ligo-final/png/logo-principal-fundo-escuro.png"
-          alt="Ligo! - Página inicial" class="logo">
+        <img src="static/images/ligo-final/png/logo-principal-fundo-escuro.png" alt="Ligo! - Página inicial"
+          class="logo">
       </a>
 
       <button class="menu-botao" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
@@ -53,6 +54,79 @@
   </header>
 
   <main class="container">
+    <section class="info-hero">
+      <h1>Da solicitação à avaliação em <span class="destaque">4 passos</span></h1>
+      <p>Veja como contratantes e prestadores se conectam no Ligo!</p>
+    </section>
+
+    <section aria-label="Etapas do Ligo!">
+      <ol class="etapas-lista">
+
+        <li class="etapa revelar">
+          <span class="etapa-numero" aria-hidden="true">1</span>
+          <h2>Solicitação</h2>
+          <div class="etapa-lado">
+            <span class="etapa-rotulo">Para quem contrata</span>
+            <p>Descreva o serviço que você precisa.</p>
+          </div>
+          <div class="etapa-lado">
+            <span class="etapa-rotulo">Para quem presta o serviço</span>
+            <p>Encontre solicitações na sua região.</p>
+          </div>
+        </li>
+
+        <li class="etapa revelar">
+          <span class="etapa-numero" aria-hidden="true">2</span>
+          <h2>Proposta</h2>
+          <div class="etapa-lado">
+            <span class="etapa-rotulo">Para quem contrata</span>
+            <p>Receba e compare propostas de profissionais.</p>
+          </div>
+          <div class="etapa-lado">
+            <span class="etapa-rotulo">Para quem presta o serviço</span>
+            <p>Envie sua proposta para a solicitação.</p>
+          </div>
+        </li>
+
+        <li class="etapa revelar">
+          <span class="etapa-numero" aria-hidden="true">3</span>
+          <h2>Contratação</h2>
+          <div class="etapa-lado">
+            <span class="etapa-rotulo">Para quem contrata</span>
+            <p>Escolha a proposta que melhor atende às suas necessidades.</p>
+          </div>
+          <div class="etapa-lado">
+            <span class="etapa-rotulo">Para quem presta o serviço</span>
+            <p>Quando sua proposta for aceita, combine os detalhes do serviço.</p>
+          </div>
+        </li>
+
+        <li class="etapa revelar">
+          <span class="etapa-numero" aria-hidden="true">4</span>
+          <h2>Avaliação</h2>
+          <div class="etapa-lado">
+            <span class="etapa-rotulo">Para quem contrata</span>
+            <p>Avalie o profissional e conte como foi sua experiência.</p>
+          </div>
+          <div class="etapa-lado">
+            <span class="etapa-rotulo">Para quem presta o serviço</span>
+            <p>Avalie o contratante e compartilhe sua experiência.</p>
+          </div>
+        </li>
+
+      </ol>
+    </section>
+
+    <section class="info-cta">
+      <div class="info-cta-texto">
+        <h2>Pronto para começar?</h2>
+        <p>Crie sua conta e escolha como quer usar o Ligo!</p>
+      </div>
+      <div class="info-cta-botoes">
+        <a href="cadastro.html?tipo=contratante" class="botao botao-preenchido">Quero contratar</a>
+        <a href="cadastro.html?tipo=prestador" class="botao botao-contorno">Quero oferecer meus serviços</a>
+      </div>
+    </section>
   </main>
 
   <footer>
