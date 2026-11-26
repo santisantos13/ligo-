@@ -33,6 +33,24 @@
   }
 }
 
+@keyframes tremer {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20%,
+  60% {
+    transform: translateX(-4px);
+  }
+
+  40%,
+  80% {
+    transform: translateX(4px);
+  }
+}
+
 /*  Entrada da página  */
 main {
   animation: entrada 0.4s var(--suavizacao);
@@ -250,6 +268,74 @@ summary:focus-visible {
   .beneficio:hover .beneficio-icone {
     transform: scale(1.08) rotate(-4deg);
   }
+}
+
+/*  Formulários  */
+.auth-cartao {
+  animation: entrada 0.3s var(--suavizacao) 0.1s backwards;
+}
+
+.formulario input:not([type="checkbox"], [type="radio"]) {
+  transition:
+    border-color var(--duracao),
+    box-shadow var(--duracao);
+}
+
+.formulario input:not([type="checkbox"], [type="radio"]):focus {
+  box-shadow: 0 0 0 3px rgba(121, 85, 232, 0.25);
+}
+
+.formulario input[aria-invalid="true"]:not([type="checkbox"], [type="radio"]) {
+  animation: tremer 0.35s ease-in-out;
+}
+
+.formulario input[aria-invalid="true"]:not([type="checkbox"], [type="radio"]):focus {
+  box-shadow: 0 0 0 3px rgba(255, 107, 122, 0.25);
+}
+
+.formulario-erro:not([hidden]) {
+  animation: surgir var(--duracao) var(--suavizacao);
+}
+
+.formulario button {
+  transition:
+    background-color var(--duracao),
+    transform var(--duracao) var(--suavizacao),
+    box-shadow var(--duracao);
+}
+
+@media (hover: hover) {
+  .formulario button:hover {
+    background-color: var(--royal-purple2);
+    transform: translateY(var(--elevacao));
+    box-shadow: var(--brilho);
+  }
+
+  .tipo-opcao:hover .tipo-opcao-cartao {
+    transform: translateY(var(--elevacao));
+    border-color: var(--royal-purple);
+  }
+}
+
+.formulario button:active {
+  transform: scale(0.97);
+  box-shadow: none;
+}
+
+.tipo-opcao-cartao {
+  transition:
+    border-color var(--duracao),
+    background-color var(--duracao),
+    transform var(--duracao) var(--suavizacao),
+    box-shadow var(--duracao);
+}
+
+.tipo-opcao input:checked+.tipo-opcao-cartao {
+  box-shadow: var(--brilho);
+}
+
+.tipo-opcao:active .tipo-opcao-cartao {
+  transform: scale(0.97);
 }
 
 /*  Movimento reduzido  */

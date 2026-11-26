@@ -16,6 +16,7 @@ function limparErros(formulario, area) {
 }
 
 function marcarInvalido(campo, area, texto) {
+  void campo.offsetWidth;
   campo.setAttribute("aria-invalid", "true");
   mostrarMensagem(area, texto, "erro");
   campo.focus();
