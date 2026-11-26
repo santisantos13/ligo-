@@ -88,6 +88,26 @@
   font-weight: 600;
 }
 
+/*  Cabeçalho  */
+.menu-simples {
+  justify-content: flex-end;
+}
+
+/*  Ajuda para novos usuários  */
+.escolha-ajuda {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 48px;
+}
+
+.escolha-ajuda p {
+  margin: 0;
+  color: var(--slate2);
+  font-size: 16px;
+}
+
 
 
 
@@ -143,6 +163,10 @@
     gap: 20px;
   }
 
+  .escolha-ajuda {
+    margin-top: 32px;
+  }
+
   .card-perfil {
     flex: none;
     padding: 24px;
@@ -175,7 +199,7 @@
     /* --u vale 1px num celular de 360x800 (o seu Galaxy A55).
        Em telas menores, encolhe; em maiores, cresce até no máximo 1.2px */
     --u: min(0.2778vw, 0.125svh, 1.2px);
-    padding: calc(12 * var(--u)) 0 calc(24 * var(--u));
+    padding: calc(12 * var(--u)) 0 calc(8 * var(--u));
   }
 
   .escolha-perfil h1 {
@@ -229,6 +253,26 @@
 
   .card-acao {
     font-size: max(15px, calc(16 * var(--u)));
+  }
+
+  .escolha-ajuda {
+    flex-direction: row;
+    justify-content: center;
+    gap: calc(10 * var(--u));
+    margin-top: calc(12 * var(--u));
+  }
+
+  .escolha-ajuda p {
+    font-size: max(13px, calc(14 * var(--u)));
+  }
+
+  .escolha-ajuda .botao {
+    padding: calc(7 * var(--u)) calc(14 * var(--u));
+    font-size: max(13px, calc(14 * var(--u)));
+  }
+
+  .rodape-escolha {
+    margin-top: 12px;
   }
 }
 

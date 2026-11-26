@@ -27,7 +27,18 @@
           alt="Ligo! - Página inicial" class="logo">
       </a>
 
-      <a href="login.html" class="botao botao-contorno">Entrar</a>
+      <button class="menu-botao" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="menu menu-simples" id="menu">
+        <div class="login-cadastro">
+          <a href="login.html" class="botao botao-contorno">Entrar</a>
+          <a href="cadastro.html" class="botao botao-preenchido">Cadastrar</a>
+        </div>
+      </div>
     </nav>
   </header>
 
@@ -76,12 +87,19 @@
         </a>
 
       </div>
+
+      <div class="escolha-ajuda">
+        <p>Novo por aqui?</p>
+        <a href="info.html" class="botao botao-contorno">Veja como funciona</a>
+      </div>
     </section>
   </main>
 
-  <footer>
+  <footer class="rodape-escolha">
     <p>&copy; 2026 Ligo LTDA - Todos os direitos reservados</p>
   </footer>
+
+  <script src="static/js/script.js"></script>
 
 </body>
 
