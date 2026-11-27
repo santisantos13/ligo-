@@ -95,7 +95,7 @@
       <p>Encontre profissionais e transforme suas ideias em realidade.</p>
     </div>
 
-    <form class="busca" action="#" method="get">
+    <form class="busca" action="#anuncios" method="get">
 
       <div class="busca-campo busca-servico">
         <svg class="busca-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -147,11 +147,25 @@
       </ul>
     </div>
 
-    <section class="anuncios" aria-labelledby="anuncios-titulo">
-      <h2 id="anuncios-titulo">Anúncios em destaque</h2>
+    <section class="destaques" id="destaques" aria-labelledby="destaques-titulo">
+      <h2 id="destaques-titulo">Anúncios em destaque</h2>
+      <p class="destaques-subtitulo">Destaque por boa avaliação ou por patrocínio, sempre identificado no card.</p>
+
+      <ul class="destaques-lista" id="destaques-lista"></ul>
+    </section>
+
+    <section class="anuncios" id="anuncios" aria-labelledby="anuncios-titulo">
+      <h2 id="anuncios-titulo">Todos os anúncios</h2>
+      <p class="anuncios-resumo" id="anuncios-resumo" hidden></p>
+      <a class="anuncios-limpar" id="anuncios-limpar" href="contratante.html#anuncios" hidden>Limpar filtros</a>
       <p class="anuncios-aviso">Dados de exemplo: nenhum prestador é real.</p>
 
       <ul class="anuncios-lista" id="anuncios-lista"></ul>
+
+      <div class="anuncios-vazio" id="anuncios-vazio" hidden>
+        <p>Tente buscar por outro termo ou veja todos os anúncios disponíveis.</p>
+        <a href="contratante.html#anuncios" class="botao botao-contorno">Ver todos os anúncios</a>
+      </div>
 
       <div class="anuncios-rodape" id="anuncios-rodape" hidden>
         <button type="button" class="botao botao-contorno anuncios-mais" id="anuncios-mais">Ver mais anúncios</button>

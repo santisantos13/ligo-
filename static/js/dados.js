@@ -1,4 +1,7 @@
 // Dados de exemplo da LIGO!: nenhum prestador é real.
+// "destaque" faz o anúncio aparecer também na faixa de destaques e explica o motivo:
+//   { motivo: "nota", nota: 4.9, avaliacoes: 87 }  -> destaque por boa avaliação
+//   { motivo: "patrocinado" }                       -> destaque pago pelo prestador
 // Os "slug" precisam ser iguais aos usados nos links (?categoria=... e ?cidade=...).
 
 const categorias = [
@@ -26,6 +29,7 @@ const cidades = [
 const anuncios = [
   {
     id: 1,
+    destaque: { motivo: "nota", nota: 4.9, avaliacoes: 87 },
     titulo: "Eletricista: instalação e reparos elétricos",
     prestador: "Eletro Mineiro",
     categoria: "eletrica",
@@ -50,6 +54,7 @@ const anuncios = [
   },
   {
     id: 4,
+    destaque: { motivo: "patrocinado" },
     titulo: "Diarista e limpeza residencial",
     prestador: "Casa em Ordem",
     categoria: "limpeza",
@@ -82,6 +87,7 @@ const anuncios = [
   },
   {
     id: 8,
+    destaque: { motivo: "nota", nota: 5.0, avaliacoes: 34 },
     titulo: "Desenvolvedor web para sites e sistemas",
     prestador: "Código Mineiro",
     categoria: "desenvolvimento-web",

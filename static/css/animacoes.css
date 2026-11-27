@@ -129,6 +129,16 @@ main {
   animation: entrada 0.4s var(--suavizacao);
 }
 
+.anuncios-vazio:not([hidden]) {
+  animation: entrada 0.4s var(--suavizacao);
+}
+
+@media (hover: hover) {
+  .anuncios-limpar:hover {
+    text-decoration: underline;
+  }
+}
+
 /*  Modal  */
 .modal[open] {
   animation: entrada 0.3s var(--suavizacao);
@@ -310,6 +320,11 @@ summary:focus-visible {
   .anuncio:hover {
     border-color: var(--royal-purple);
     box-shadow: var(--brilho-card);
+  }
+
+  .anuncio.anuncio-destaque:hover {
+    border-color: var(--estrela);
+    box-shadow: none;
   }
 
   .beneficio:hover .beneficio-icone,

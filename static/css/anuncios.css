@@ -1,6 +1,68 @@
+/*  Faixa de destaques  */
+.destaques {
+  margin-top: 96px;
+}
+
+.destaques[hidden] {
+  display: none;
+}
+
+.destaques h2 {
+  margin: 0 0 8px;
+  font-size: 40px;
+}
+
+.destaques-subtitulo {
+  margin: 0;
+  color: var(--slate2);
+  font-size: 16px;
+}
+
+.destaques-lista {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 40px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.anuncio.anuncio-destaque {
+  border-color: var(--estrela);
+}
+
+.anuncio.anuncio-destaque h3 {
+  font-size: 25px;
+}
+
+.anuncio-selo {
+  align-self: flex-start;
+  padding: 6px 14px;
+  background-color: rgba(245, 184, 61, 0.15);
+  border: 1px solid rgba(245, 184, 61, 0.5);
+  border-radius: 999px;
+  color: var(--estrela);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.anuncio-motivo {
+  margin: 0;
+  color: var(--estrela);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.anuncio-motivo-patrocinado {
+  color: var(--slate2);
+  font-weight: 500;
+}
+
 /*  Anúncios  */
 .anuncios {
-  margin: 96px 0 96px;
+  margin: 72px 0 96px;
   padding-top: 56px;
   border-top: 1px solid var(--border-purple);
 }
@@ -8,6 +70,24 @@
 .anuncios h2 {
   margin: 0 0 8px;
   font-size: 40px;
+}
+
+.anuncios-resumo {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.anuncios-limpar {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--purple-rose);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.anuncios-limpar[hidden] {
+  display: none;
 }
 
 .anuncios-aviso {
@@ -74,6 +154,33 @@
   font-size: 14px;
 }
 
+.anuncios-vazio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 40px;
+  padding: 40px;
+  border: 1px dashed var(--border-purple);
+  border-radius: 24px;
+}
+
+.anuncios-vazio[hidden] {
+  display: none;
+}
+
+.anuncios-vazio p {
+  margin: 0;
+  color: var(--slate2);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.anuncios-vazio .botao {
+  padding: 14px 28px;
+  font-weight: 600;
+}
+
 .anuncios-rodape {
   display: flex;
   justify-content: center;
@@ -95,12 +202,29 @@
 }
 
 @media (max-width: 900px) {
+  .destaques-lista {
+    grid-template-columns: 1fr;
+  }
+
   .anuncios-lista {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
+  .destaques {
+    margin-top: 72px;
+  }
+
+  .destaques h2 {
+    font-size: 30px;
+  }
+
+  .destaques-lista {
+    gap: 16px;
+    margin-top: 28px;
+  }
+
   .anuncios {
     margin: 72px 0;
     padding-top: 40px;
@@ -118,5 +242,9 @@
 
   .anuncio {
     padding: 24px;
+  }
+
+  .anuncios-vazio {
+    padding: 28px 24px;
   }
 }
