@@ -92,7 +92,8 @@
           <label for="descricao">Descrição</label>
           <textarea name="descricao" id="descricao" rows="5" maxlength="500"
             placeholder="Explique o que precisa ser feito, com o máximo de detalhes..." required></textarea>
-          <p class="campo-ajuda">Até 500 caracteres. Não compartilhe telefone nem endereço completo: o contato acontece depois de você aceitar uma proposta.</p>
+          <p class="campo-contador" id="descricao-contador">0/500</p>
+          <p class="campo-ajuda">Não compartilhe telefone nem endereço completo: o contato acontece depois de você aceitar uma proposta.</p>
 
           <fieldset class="tipo-conta">
             <legend>Prazo desejado <span class="campo-opcional">(opcional)</span></legend>
@@ -137,6 +138,7 @@
   </footer>
 
   <script src="static/js/dados.js"></script>
+  <script src="static/js/autenticacao.js"></script>
   <script src="static/js/solicitacao.js"></script>
   <script src="static/js/script.js"></script>
 

@@ -363,6 +363,16 @@ summary:focus-visible {
   box-shadow: 0 0 0 3px rgba(121, 85, 232, 0.25);
 }
 
+.formulario select[aria-invalid="true"],
+.formulario textarea[aria-invalid="true"] {
+  animation: tremer 0.35s ease-in-out;
+}
+
+.formulario select[aria-invalid="true"]:focus,
+.formulario textarea[aria-invalid="true"]:focus {
+  box-shadow: 0 0 0 3px rgba(255, 107, 122, 0.25);
+}
+
 .formulario input[aria-invalid="true"]:not([type="checkbox"], [type="radio"]) {
   animation: tremer 0.35s ease-in-out;
 }

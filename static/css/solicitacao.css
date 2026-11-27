@@ -87,11 +87,29 @@
   font-weight: 400;
 }
 
+.campo-contador {
+  margin: 6px 0 0;
+  color: var(--slate2);
+  font-size: 13px;
+  text-align: right;
+}
+
 .campo-ajuda {
   margin: 8px 0 0;
   color: var(--slate2);
   font-size: 13px;
   line-height: 1.5;
+}
+
+.formulario select[aria-invalid="true"],
+.formulario textarea[aria-invalid="true"] {
+  border-color: var(--erro);
+}
+
+.formulario-erro a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 .prazo-opcoes {
