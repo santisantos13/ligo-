@@ -46,12 +46,9 @@
 .solicitar-botao {
   flex: none;
   padding: 16px 32px;
-  border: 0;
-  color: var(--white);
-  font: inherit;
   font-size: 16px;
   font-weight: 600;
-  cursor: pointer;
+  text-align: center;
 }
 
 /*  Faixa de destaques  */
@@ -230,6 +227,12 @@
   color: var(--slate2);
   font-size: 18px;
   line-height: 1.5;
+}
+
+.anuncios-vazio-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .anuncios-vazio .botao {

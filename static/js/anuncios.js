@@ -250,6 +250,29 @@ function ajustarLinksDeFiltro(filtros) {
   });
 }
 
+// A solicitação leva o que a pessoa estava buscando, para o formulário já vir preenchido
+function ajustarLinksDeSolicitacao(filtros) {
+  const links = document.querySelectorAll("a[data-solicitar]");
+
+  links.forEach(function (link) {
+    const parametros = new URLSearchParams();
+
+    if (filtros.categoria) {
+      parametros.set("categoria", filtros.categoria);
+    }
+
+    if (filtros.cidade) {
+      parametros.set("cidade", filtros.cidade);
+    }
+
+    if (filtros.servico) {
+      parametros.set("servico", filtros.servico);
+    }
+
+    link.search = parametros.toString();
+  });
+}
+
 // ---------- Aplicar filtros na própria página ----------
 
 function montarUrl(filtros) {
@@ -284,6 +307,7 @@ function aplicarFiltros(filtros, rolar) {
   limparAnuncios.hidden = !temFiltro;
 
   ajustarLinksDeFiltro(filtros);
+  ajustarLinksDeSolicitacao(filtros);
   mostrarAnuncios(resultados);
 
   if (rolar) {

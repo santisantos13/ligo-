@@ -15,7 +15,6 @@
   <link rel="stylesheet" href="static/css/header.css">
   <link rel="stylesheet" href="static/css/hero.css">
   <link rel="stylesheet" href="static/css/anuncios.css">
-  <link rel="stylesheet" href="static/css/modal.css">
   <link rel="stylesheet" href="static/css/fundos.css">
   <link rel="stylesheet" href="static/css/animacoes.css">
 </head>
@@ -164,8 +163,8 @@
         <p>Conte o que você está procurando.</p>
       </div>
 
-      <button type="button" class="botao botao-preenchido solicitar-botao" data-modal="modal-solicitacao">Publicar uma
-        solicitação</button>
+      <a href="solicitacao.html" class="botao botao-preenchido solicitar-botao" data-solicitar>Publicar uma
+        solicitação</a>
     </section>
 
     <section class="destaques" id="destaques" aria-labelledby="destaques-titulo">
@@ -185,7 +184,10 @@
 
       <div class="anuncios-vazio" id="anuncios-vazio" hidden>
         <p>Tente buscar por outro termo ou veja todos os anúncios disponíveis.</p>
-        <a href="contratante.html#anuncios" class="botao botao-contorno">Ver todos os anúncios</a>
+        <div class="anuncios-vazio-acoes">
+          <a href="solicitacao.html" class="botao botao-preenchido" data-solicitar>Publicar uma solicitação</a>
+          <a href="contratante.html#anuncios" class="botao botao-contorno">Ver todos os anúncios</a>
+        </div>
       </div>
 
       <div class="anuncios-rodape" id="anuncios-rodape" hidden>
@@ -197,18 +199,6 @@
   <footer>
     <p>&copy; 2026 Ligo LTDA - Todos os direitos reservados</p>
   </footer>
-
-  <dialog class="modal" id="modal-solicitacao" aria-labelledby="modal-solicitacao-titulo">
-    <div class="modal-conteudo">
-      <form method="dialog">
-        <button class="modal-fechar" aria-label="Fechar">&times;</button>
-      </form>
-
-      <span class="modal-selo">Em breve</span>
-      <h2 id="modal-solicitacao-titulo">Publicar uma solicitação</h2>
-      <p class="modal-intro">Estamos preparando esta função. Em breve você poderá publicar sua solicitação por aqui.</p>
-    </div>
-  </dialog>
 
   <script src="static/js/dados.js"></script>
   <script src="static/js/anuncios.js"></script>
