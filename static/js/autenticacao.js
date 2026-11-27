@@ -26,6 +26,21 @@ function formatoEmailValido(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+// ---------- Mostrar/ocultar senha ----------
+
+document.querySelectorAll(".campo-senha-botao").forEach(function (botao) {
+  const campo = document.getElementById(botao.getAttribute("aria-controls"));
+
+  botao.addEventListener("click", function () {
+    const estavaVisivel = campo.type === "text";
+
+    campo.type = estavaVisivel ? "password" : "text";
+    botao.classList.toggle("senha-visivel", !estavaVisivel);
+    botao.setAttribute("aria-label", estavaVisivel ? "Mostrar senha" : "Ocultar senha");
+    campo.focus();
+  });
+});
+
 // ---------- Login ----------
 
 const formularioLogin = document.querySelector("#formulario-login");

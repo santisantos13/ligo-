@@ -33,6 +33,16 @@
   }
 }
 
+@keyframes esmaecer {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes tremer {
 
   0%,
@@ -107,6 +117,28 @@ main {
 
 .revelar:nth-child(4) {
   transition-delay: 0.45s, 0.45s, 0s, 0s;
+}
+
+/*  Modal  */
+.modal[open] {
+  animation: entrada 0.3s var(--suavizacao);
+}
+
+.modal[open]::backdrop {
+  animation: esmaecer 0.3s ease;
+}
+
+.modal-fechar {
+  transition:
+    background-color var(--duracao),
+    border-color var(--duracao);
+}
+
+@media (hover: hover) {
+  .modal-fechar:hover {
+    background-color: var(--deep-violet);
+    border-color: var(--royal-purple);
+  }
 }
 
 /*  Foco por teclado  */
@@ -325,6 +357,27 @@ summary:focus-visible {
 .formulario button:active {
   transform: scale(0.97);
   box-shadow: none;
+}
+
+.formulario .campo-senha-botao {
+  transition: color var(--duracao);
+}
+
+@media (hover: hover) {
+  .formulario .campo-senha-botao:hover {
+    background-color: transparent;
+    transform: none;
+    box-shadow: none;
+    color: var(--white);
+  }
+}
+
+.formulario .campo-senha-botao:active {
+  transform: none;
+}
+
+.formulario .campo-senha-botao:focus-visible {
+  outline-offset: -4px;
 }
 
 .tipo-opcao-cartao {

@@ -88,12 +88,30 @@
           <input type="email" name="email" id="email" placeholder="Digite seu e-mail..." autocomplete="email" required>
 
           <label for="senha">Senha</label>
-          <input type="password" name="senha" id="senha" placeholder="Crie uma senha..." autocomplete="new-password"
-            minlength="8" required>
+          <div class="campo-senha">
+            <input type="password" name="senha" id="senha" placeholder="Crie uma senha..." autocomplete="new-password"
+              minlength="8" required>
+            <button type="button" class="campo-senha-botao" aria-label="Mostrar senha" aria-controls="senha">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" />
+              <circle cx="12" cy="12" r="3" />
+              <line class="olho-risco" x1="3" y1="3" x2="21" y2="21" />
+            </svg>
+            </button>
+          </div>
 
           <label for="confirmar-senha">Confirme sua senha</label>
-          <input type="password" name="confirmar_senha" id="confirmar-senha" placeholder="Repita a senha..."
-            autocomplete="new-password" required>
+          <div class="campo-senha">
+            <input type="password" name="confirmar_senha" id="confirmar-senha" placeholder="Repita a senha..."
+              autocomplete="new-password" required>
+            <button type="button" class="campo-senha-botao" aria-label="Mostrar senha" aria-controls="confirmar-senha">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" />
+              <circle cx="12" cy="12" r="3" />
+              <line class="olho-risco" x1="3" y1="3" x2="21" y2="21" />
+            </svg>
+            </button>
+          </div>
 
           <fieldset class="tipo-conta">
             <legend>Como você quer usar a plataforma? Você pode escolher os dois.</legend>

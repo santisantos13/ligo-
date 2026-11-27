@@ -101,6 +101,42 @@
   font-size: 15px;
 }
 
+/*  Campo de senha com botão mostrar/ocultar  */
+.campo-senha {
+  position: relative;
+}
+
+.formulario .campo-senha input:not([type="checkbox"], [type="radio"]) {
+  padding-right: 56px;
+}
+
+.formulario .campo-senha-botao {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: 46px;
+  margin: 0;
+  padding: 0 14px;
+  background-color: transparent;
+  border-radius: 12px;
+  color: var(--slate2);
+  line-height: 0;
+}
+
+.campo-senha-botao svg {
+  width: 22px;
+  height: 22px;
+}
+
+.campo-senha-botao .olho-risco {
+  display: none;
+}
+
+.campo-senha-botao.senha-visivel .olho-risco {
+  display: inline;
+}
+
 .formulario input::placeholder {
   color: var(--slate);
 }
