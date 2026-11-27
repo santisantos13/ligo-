@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="static/css/base.css">
   <link rel="stylesheet" href="static/css/header.css">
   <link rel="stylesheet" href="static/css/hero.css">
+  <link rel="stylesheet" href="static/css/anuncios.css">
   <link rel="stylesheet" href="static/css/fundos.css">
   <link rel="stylesheet" href="static/css/animacoes.css">
 </head>
@@ -145,12 +146,25 @@
         <li><a href="contratante.html?servico=criacao-de-site">Criação de Site</a></li>
       </ul>
     </div>
+
+    <section class="anuncios" aria-labelledby="anuncios-titulo">
+      <h2 id="anuncios-titulo">Anúncios em destaque</h2>
+      <p class="anuncios-aviso">Dados de exemplo: nenhum prestador é real.</p>
+
+      <ul class="anuncios-lista" id="anuncios-lista"></ul>
+
+      <div class="anuncios-rodape" id="anuncios-rodape" hidden>
+        <button type="button" class="botao botao-contorno anuncios-mais" id="anuncios-mais">Ver mais anúncios</button>
+      </div>
+    </section>
   </main>
 
   <footer>
     <p>&copy; 2026 Ligo LTDA - Todos os direitos reservados</p>
   </footer>
 
+  <script src="static/js/dados.js"></script>
+  <script src="static/js/anuncios.js"></script>
   <script src="static/js/script.js"></script>
 
 </body>

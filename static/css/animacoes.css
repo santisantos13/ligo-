@@ -84,7 +84,8 @@ main {
 
 /*  Cards de benefício e etapas  */
 .beneficio,
-.etapa {
+.etapa,
+.anuncio {
   transition:
     border-color var(--duracao),
     box-shadow var(--duracao);
@@ -97,7 +98,8 @@ main {
 
 @media (scripting: enabled) {
   .beneficio.revelar,
-  .etapa.revelar {
+  .etapa.revelar,
+  .anuncio.revelar {
     transition:
       opacity 0.8s ease,
       transform 0.8s ease,
@@ -117,6 +119,14 @@ main {
 
 .revelar:nth-child(4) {
   transition-delay: 0.45s, 0.45s, 0s, 0s;
+}
+
+.anuncio.revelar:nth-child(n + 4) {
+  transition-delay: 0s;
+}
+
+.anuncio-extra {
+  animation: entrada 0.4s var(--suavizacao);
 }
 
 /*  Modal  */
@@ -296,7 +306,8 @@ summary:focus-visible {
 /*  Cards de benefício do prestador  */
 @media (hover: hover) {
   .beneficio:hover,
-  .etapa:hover {
+  .etapa:hover,
+  .anuncio:hover {
     border-color: var(--royal-purple);
     box-shadow: var(--brilho-card);
   }
