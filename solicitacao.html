@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publicar solicitação - Ligo!</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/base.css">
+  <link rel="stylesheet" href="static/css/header.css">
+  <link rel="stylesheet" href="static/css/autenticacao.css">
+  <link rel="stylesheet" href="static/css/solicitacao.css">
+  <link rel="stylesheet" href="static/css/fundos.css">
+  <link rel="stylesheet" href="static/css/animacoes.css">
+</head>
+
+<body class="fundo-baixo">
+  <header>
+
+    <nav class="container">
+      <a href="index.html">
+        <img src="static/images/ligo-final/png/logo-principal-fundo-escuro.png"
+          alt="Ligo! - Página inicial" class="logo">
+      </a>
+
+      <button class="menu-botao" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="menu" id="menu">
+
+        <ul class="links">
+
+          <li><a href="contratante.html">Início</a></li>
+
+          <li><a href="info.html">Como funciona</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+
+        <div class="login-cadastro">
+          <a href="login.html" class="botao botao-contorno">Entrar</a>
+          <a href="cadastro.html" class="botao botao-preenchido">Cadastrar</a>
+        </div>
+
+      </div>
+
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="solicitacao">
+      <a class="solicitacao-voltar" href="contratante.html">&larr; Voltar para os anúncios</a>
+
+      <h1>Publicar uma solicitação</h1>
+      <p class="solicitacao-intro">Conte o que você precisa. Os prestadores da sua região poderão responder com propostas.</p>
+
+      <section class="auth-cartao" aria-label="Formulário de solicitação">
+        <form class="formulario" id="formulario-solicitacao" method="post" novalidate>
+          <p class="formulario-erro" id="solicitacao-erro" role="alert" hidden></p>
+
+          <label for="titulo">O que você precisa?</label>
+          <input type="text" name="titulo" id="titulo" placeholder="Ex.: Trocar a fiação da cozinha" maxlength="80"
+            required>
+
+          <label for="categoria">Categoria</label>
+          <select name="categoria" id="categoria" required>
+            <option value="">Selecione uma categoria</option>
+          </select>
+
+          <div class="formulario-linha">
+            <div>
+              <label for="cidade">Cidade</label>
+              <select name="cidade" id="cidade" required>
+                <option value="">Selecione sua cidade</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="bairro">Bairro <span class="campo-opcional">(opcional)</span></label>
+              <input type="text" name="bairro" id="bairro" placeholder="Ex.: Centro" maxlength="60"
+                autocomplete="off">
+            </div>
+          </div>
+
+          <label for="descricao">Descrição</label>
+          <textarea name="descricao" id="descricao" rows="5" maxlength="500"
+            placeholder="Explique o que precisa ser feito, com o máximo de detalhes..." required></textarea>
+          <p class="campo-ajuda">Até 500 caracteres. Não compartilhe telefone nem endereço completo: o contato acontece depois de você aceitar uma proposta.</p>
+
+          <fieldset class="tipo-conta">
+            <legend>Prazo desejado <span class="campo-opcional">(opcional)</span></legend>
+
+            <div class="tipo-opcoes prazo-opcoes">
+              <label class="tipo-opcao">
+                <input type="radio" name="prazo" value="urgente">
+                <span class="tipo-opcao-cartao">
+                  <strong>Urgente</strong>
+                  <small>Hoje ou amanhã</small>
+                </span>
+              </label>
+
+              <label class="tipo-opcao">
+                <input type="radio" name="prazo" value="semana">
+                <span class="tipo-opcao-cartao">
+                  <strong>Esta semana</strong>
+                  <small>Nos próximos 7 dias</small>
+                </span>
+              </label>
+
+              <label class="tipo-opcao">
+                <input type="radio" name="prazo" value="sem-pressa">
+                <span class="tipo-opcao-cartao">
+                  <strong>Sem pressa</strong>
+                  <small>Sem data definida</small>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <button type="submit">Publicar solicitação</button>
+        </form>
+
+        <p class="auth-troca">Para publicar, você precisa estar logado. <a href="login.html">Entrar</a></p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Ligo LTDA - Todos os direitos reservados</p>
+  </footer>
+
+  <script src="static/js/dados.js"></script>
+  <script src="static/js/solicitacao.js"></script>
+  <script src="static/js/script.js"></script>
+
+</body>
+
+</html>
