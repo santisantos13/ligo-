@@ -134,7 +134,7 @@ if (formularioCadastro) {
   const textoDescricao = document.querySelector("#cadastro-descricao");
   const itensBeneficios = document.querySelectorAll("#cadastro-beneficios li");
   const caixaContratante = formularioCadastro.querySelector('input[name="papeis"][value="contratante"]');
-  const caixaPrestador = formularioCadastro.querySelector('input[name="papeis"][value="prestador"]');
+  const caixaProfissional = formularioCadastro.querySelector('input[name="papeis"][value="profissional"]');
 
   const textosPorPapel = {
     nenhum: {
@@ -153,7 +153,7 @@ if (formularioCadastro) {
         "Avalie quem realizou o serviço"
       ]
     },
-    prestador: {
+    profissional: {
       descricao: "Divulgue seus serviços, encontre solicitações e envie propostas para conquistar clientes.",
       beneficios: [
         "Divulgue seus serviços",
@@ -174,12 +174,12 @@ if (formularioCadastro) {
   function atualizarTextos() {
     let situacao = "nenhum";
 
-    if (caixaContratante.checked && caixaPrestador.checked) {
+    if (caixaContratante.checked && caixaProfissional.checked) {
       situacao = "ambos";
     } else if (caixaContratante.checked) {
       situacao = "contratante";
-    } else if (caixaPrestador.checked) {
-      situacao = "prestador";
+    } else if (caixaProfissional.checked) {
+      situacao = "profissional";
     }
 
     const textos = textosPorPapel[situacao];

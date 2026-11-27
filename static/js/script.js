@@ -54,11 +54,11 @@ document.addEventListener("click", function (event) {
 });
 
 // Cadastro: marca o tipo de conta conforme o parâmetro ?tipo= da URL
-// (ex.: cadastro.html?tipo=prestador)
+// (ex.: cadastro.html?tipo=profissional)
 const parametrosUrl = new URLSearchParams(window.location.search);
 const tipoConta = parametrosUrl.get("tipo");
 
-if (tipoConta === "contratante" || tipoConta === "prestador") {
+if (tipoConta === "contratante" || tipoConta === "profissional") {
   const caixaTipo = document.querySelector('input[name="papeis"][value="' + tipoConta + '"]');
 
   if (caixaTipo) {

@@ -1,7 +1,7 @@
-// Dados de exemplo da LIGO!: nenhum prestador é real.
+// Dados de exemplo da LIGO!: nenhum profissional é real.
 // "destaque" faz o anúncio aparecer também na faixa de destaques e explica o motivo:
 //   { motivo: "nota", nota: 4.9, avaliacoes: 87 }  -> destaque por boa avaliação
-//   { motivo: "patrocinado" }                       -> destaque pago pelo prestador
+//   { motivo: "patrocinado" }                       -> destaque pago pelo profissional
 // Cada categoria pertence a um "grupo" (usado no formulário de solicitação).
 // Os "slug" precisam ser iguais aos usados nos links (?categoria=... e ?cidade=...).
 
@@ -37,7 +37,7 @@ const anuncios = [
     id: 1,
     destaque: { motivo: "nota", nota: 4.9, avaliacoes: 87 },
     titulo: "Eletricista: instalação e reparos elétricos",
-    prestador: "Eletro Mineiro",
+    profissional: "Eletro Mineiro",
     categoria: "eletrica",
     cidade: "contagem",
     descricao: "Troca de tomadas, disjuntores e chuveiros, além de revisão geral da instalação elétrica."
@@ -45,7 +45,7 @@ const anuncios = [
   {
     id: 2,
     titulo: "Encanador: desentupimento e reparo de vazamentos",
-    prestador: "Hidrofácil",
+    profissional: "Hidrofácil",
     categoria: "hidraulica",
     cidade: "belo-horizonte",
     descricao: "Atendimento para vazamentos, caixas d'água, torneiras e desentupimento de pias e ralos."
@@ -53,7 +53,7 @@ const anuncios = [
   {
     id: 3,
     titulo: "Encanador para instalações e reformas hidráulicas",
-    prestador: "Água Certa",
+    profissional: "Água Certa",
     categoria: "hidraulica",
     cidade: "betim",
     descricao: "Instalação de louças, registros e tubulações em casas e apartamentos."
@@ -62,7 +62,7 @@ const anuncios = [
     id: 4,
     destaque: { motivo: "patrocinado" },
     titulo: "Diarista e limpeza residencial",
-    prestador: "Casa em Ordem",
+    profissional: "Casa em Ordem",
     categoria: "limpeza",
     cidade: "betim",
     descricao: "Limpeza completa de casas e apartamentos, com opção de diária ou limpeza pós-obra."
@@ -70,7 +70,7 @@ const anuncios = [
   {
     id: 5,
     titulo: "Limpeza de escritórios e pequenos comércios",
-    prestador: "Brilho Total",
+    profissional: "Brilho Total",
     categoria: "limpeza",
     cidade: "contagem",
     descricao: "Limpeza semanal ou quinzenal para escritórios, consultórios e lojas."
@@ -78,7 +78,7 @@ const anuncios = [
   {
     id: 6,
     titulo: "Reforma de banheiros e cozinhas",
-    prestador: "Alvenaria Viva",
+    profissional: "Alvenaria Viva",
     categoria: "reformas",
     cidade: "belo-horizonte",
     descricao: "Troca de revestimentos, bancadas e instalações, com acompanhamento até a entrega."
@@ -86,7 +86,7 @@ const anuncios = [
   {
     id: 7,
     titulo: "Pequenos reparos e montagem de móveis",
-    prestador: "Faz-Tudo Prático",
+    profissional: "Faz-Tudo Prático",
     categoria: "reparos-e-manutencao",
     cidade: "contagem",
     descricao: "Pendurar prateleiras, ajustar portas, trocar fechaduras e montar móveis."
@@ -95,7 +95,7 @@ const anuncios = [
     id: 8,
     destaque: { motivo: "nota", nota: 5.0, avaliacoes: 34 },
     titulo: "Desenvolvedor web para sites e sistemas",
-    prestador: "Código Mineiro",
+    profissional: "Código Mineiro",
     categoria: "desenvolvimento-web",
     cidade: "belo-horizonte",
     descricao: "Desenvolvimento de sites e sistemas web sob medida, do planejamento à publicação."
@@ -103,7 +103,7 @@ const anuncios = [
   {
     id: 9,
     titulo: "Criação de site institucional",
-    prestador: "Site Fácil Studio",
+    profissional: "Site Fácil Studio",
     categoria: "criacao-de-sites",
     cidade: "contagem",
     descricao: "Site simples e rápido para pequenos negócios, pronto para celular e computador."
@@ -111,7 +111,7 @@ const anuncios = [
   {
     id: 10,
     titulo: "Loja virtual completa para vender online",
-    prestador: "Vitrine Digital",
+    profissional: "Vitrine Digital",
     categoria: "e-commerce",
     cidade: "belo-horizonte",
     descricao: "Configuração de loja virtual, cadastro de produtos e meios de pagamento."
@@ -119,7 +119,7 @@ const anuncios = [
   {
     id: 11,
     titulo: "Design de interfaces e protótipos",
-    prestador: "Pixel Prático",
+    profissional: "Pixel Prático",
     categoria: "ui-ux-design",
     cidade: "betim",
     descricao: "Telas de aplicativos e sites, com protótipo navegável antes do desenvolvimento."
@@ -127,7 +127,7 @@ const anuncios = [
   {
     id: 12,
     titulo: "Identidade visual e logotipos",
-    prestador: "Traço Criativo",
+    profissional: "Traço Criativo",
     categoria: "design-e-criacao",
     cidade: "belo-horizonte",
     descricao: "Criação de logotipo, paleta de cores e peças para redes sociais."
@@ -135,7 +135,7 @@ const anuncios = [
   {
     id: 13,
     titulo: "SEO e gestão de redes sociais",
-    prestador: "Alcance Digital",
+    profissional: "Alcance Digital",
     categoria: "seo-e-marketing-digital",
     cidade: "belo-horizonte",
     descricao: "Melhoria de posicionamento no Google e planejamento de conteúdo para redes sociais."
@@ -143,7 +143,7 @@ const anuncios = [
   {
     id: 14,
     titulo: "Manutenção e suporte para sites",
-    prestador: "Suporte Web Ágil",
+    profissional: "Suporte Web Ágil",
     categoria: "suporte-e-manutencao-web",
     cidade: "contagem",
     descricao: "Correção de erros, atualizações e monitoramento de sites já publicados."
@@ -151,7 +151,7 @@ const anuncios = [
   {
     id: 15,
     titulo: "Formatação, redes e suporte técnico",
-    prestador: "TI Resolve",
+    profissional: "TI Resolve",
     categoria: "tecnologia",
     cidade: "betim",
     descricao: "Formatação de computadores, configuração de redes Wi-Fi e suporte para pequenas empresas."

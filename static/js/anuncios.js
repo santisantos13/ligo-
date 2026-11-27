@@ -70,9 +70,9 @@ function criarCardAnuncio(anuncio, aparecerAoClicar) {
   const titulo = document.createElement("h3");
   titulo.textContent = anuncio.titulo;
 
-  const prestador = document.createElement("p");
-  prestador.className = "anuncio-prestador";
-  prestador.textContent = "Por " + anuncio.prestador;
+  const profissional = document.createElement("p");
+  profissional.className = "anuncio-profissional";
+  profissional.textContent = "Por " + anuncio.profissional;
 
   const descricao = document.createElement("p");
   descricao.className = "anuncio-descricao";
@@ -82,7 +82,7 @@ function criarCardAnuncio(anuncio, aparecerAoClicar) {
   cidade.className = "anuncio-cidade";
   cidade.textContent = buscarNome(cidades, anuncio.cidade);
 
-  card.append(categoria, titulo, prestador, descricao, cidade);
+  card.append(categoria, titulo, profissional, descricao, cidade);
 
   return card;
 }
@@ -94,7 +94,7 @@ function criarMotivoDestaque(destaque) {
 
   if (destaque.motivo === "patrocinado") {
     motivo.classList.add("anuncio-motivo-patrocinado");
-    motivo.textContent = "Patrocinado: anúncio pago pelo prestador";
+    motivo.textContent = "Patrocinado: anúncio pago pelo profissional";
   } else {
     const nota = destaque.nota.toFixed(1).replace(".", ",");
 
@@ -181,7 +181,7 @@ function filtrarAnuncios(lista, filtros) {
     const texto = normalizar(
       [
         anuncio.titulo,
-        anuncio.prestador,
+        anuncio.profissional,
         anuncio.descricao,
         buscarNome(categorias, anuncio.categoria),
         buscarNome(cidades, anuncio.cidade)
