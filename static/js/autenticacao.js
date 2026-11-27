@@ -26,6 +26,18 @@ function formatoEmailValido(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+function destinoPorPapeis(ehContratante, ehProfissional) {
+  if (ehContratante && !ehProfissional) {
+    return "contratante.html";
+  }
+
+  if (ehProfissional && !ehContratante) {
+    return "profissional.html";
+  }
+
+  return "index.html";
+}
+
 // ---------- Mostrar/ocultar senha ----------
 
 document.querySelectorAll(".campo-senha-botao").forEach(function (botao) {
@@ -89,6 +101,8 @@ if (formularioCadastro) {
   const campoSenha = formularioCadastro.querySelector("#senha");
   const campoConfirmar = formularioCadastro.querySelector("#confirmar-senha");
   const areaMensagem = formularioCadastro.querySelector("#cadastro-erro");
+  const caixaContratante = formularioCadastro.querySelector('input[name="papeis"][value="contratante"]');
+  const caixaProfissional = formularioCadastro.querySelector('input[name="papeis"][value="profissional"]');
 
   formularioCadastro.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -120,11 +134,7 @@ if (formularioCadastro) {
       return;
     }
 
-    mostrarMensagem(
-      areaMensagem,
-      "Dados válidos! Cadastro simulado: ainda não há servidor para criar contas.",
-      "sucesso"
-    );
+    window.location.href = destinoPorPapeis(caixaContratante.checked, caixaProfissional.checked);
   });
 
   formularioCadastro.addEventListener("input", function () {
@@ -133,8 +143,6 @@ if (formularioCadastro) {
 
   const textoDescricao = document.querySelector("#cadastro-descricao");
   const itensBeneficios = document.querySelectorAll("#cadastro-beneficios li");
-  const caixaContratante = formularioCadastro.querySelector('input[name="papeis"][value="contratante"]');
-  const caixaProfissional = formularioCadastro.querySelector('input[name="papeis"][value="profissional"]');
 
   const textosPorPapel = {
     nenhum: {
