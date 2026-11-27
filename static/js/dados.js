@@ -2,22 +2,28 @@
 // "destaque" faz o anúncio aparecer também na faixa de destaques e explica o motivo:
 //   { motivo: "nota", nota: 4.9, avaliacoes: 87 }  -> destaque por boa avaliação
 //   { motivo: "patrocinado" }                       -> destaque pago pelo prestador
+// Cada categoria pertence a um "grupo" (usado no formulário de solicitação).
 // Os "slug" precisam ser iguais aos usados nos links (?categoria=... e ?cidade=...).
 
+const grupos = [
+  { slug: "casa", nome: "Casa e reparos" },
+  { slug: "tecnologia", nome: "Tecnologia e criação" },
+];
+
 const categorias = [
-  { slug: "reparos-e-manutencao", nome: "Reparos e Manutenção" },
-  { slug: "eletrica", nome: "Elétrica" },
-  { slug: "hidraulica", nome: "Hidráulica" },
-  { slug: "reformas", nome: "Reformas" },
-  { slug: "limpeza", nome: "Limpeza" },
-  { slug: "tecnologia", nome: "Tecnologia" },
-  { slug: "desenvolvimento-web", nome: "Desenvolvimento Web" },
-  { slug: "criacao-de-sites", nome: "Criação de Sites" },
-  { slug: "e-commerce", nome: "E-commerce e Lojas Virtuais" },
-  { slug: "ui-ux-design", nome: "UI/UX e Design Web" },
-  { slug: "design-e-criacao", nome: "Design e Criação" },
-  { slug: "seo-e-marketing-digital", nome: "SEO e Marketing Digital" },
-  { slug: "suporte-e-manutencao-web", nome: "Suporte e Manutenção Web" },
+  { slug: "reparos-e-manutencao", nome: "Reparos e Manutenção", grupo: "casa" },
+  { slug: "eletrica", nome: "Elétrica", grupo: "casa" },
+  { slug: "hidraulica", nome: "Hidráulica", grupo: "casa" },
+  { slug: "reformas", nome: "Reformas", grupo: "casa" },
+  { slug: "limpeza", nome: "Limpeza", grupo: "casa" },
+  { slug: "tecnologia", nome: "Tecnologia", grupo: "tecnologia" },
+  { slug: "desenvolvimento-web", nome: "Desenvolvimento Web", grupo: "tecnologia" },
+  { slug: "criacao-de-sites", nome: "Criação de Sites", grupo: "tecnologia" },
+  { slug: "e-commerce", nome: "E-commerce e Lojas Virtuais", grupo: "tecnologia" },
+  { slug: "ui-ux-design", nome: "UI/UX e Design Web", grupo: "tecnologia" },
+  { slug: "design-e-criacao", nome: "Design e Criação", grupo: "tecnologia" },
+  { slug: "seo-e-marketing-digital", nome: "SEO e Marketing Digital", grupo: "tecnologia" },
+  { slug: "suporte-e-manutencao-web", nome: "Suporte e Manutenção Web", grupo: "tecnologia" },
 ];
 
 const cidades = [

@@ -403,6 +403,13 @@ summary:focus-visible {
     transform: translateY(var(--elevacao));
     border-color: var(--royal-purple);
   }
+
+  .formulario .categoria-grupo-botao:hover,
+  .formulario .categoria-voltar:hover {
+    border-color: var(--royal-purple);
+    background-color: var(--deep-violet);
+    box-shadow: none;
+  }
 }
 
 .formulario button:active {
