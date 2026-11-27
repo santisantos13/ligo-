@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="static/css/header.css">
   <link rel="stylesheet" href="static/css/hero.css">
   <link rel="stylesheet" href="static/css/anuncios.css">
+  <link rel="stylesheet" href="static/css/modal.css">
   <link rel="stylesheet" href="static/css/fundos.css">
   <link rel="stylesheet" href="static/css/animacoes.css">
 </head>
@@ -147,6 +148,26 @@
       </ul>
     </div>
 
+    <section class="solicitar revelar" aria-labelledby="solicitar-titulo">
+      <div class="solicitar-icone" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 3 14 8 19 8"></polyline>
+          <line x1="12" y1="11.5" x2="12" y2="17.5"></line>
+          <line x1="9" y1="14.5" x2="15" y2="14.5"></line>
+        </svg>
+      </div>
+
+      <div class="solicitar-texto">
+        <h2 id="solicitar-titulo">Não encontrou o que precisa?</h2>
+        <p>Conte o que você está procurando.</p>
+      </div>
+
+      <button type="button" class="botao botao-preenchido solicitar-botao" data-modal="modal-solicitacao">Publicar uma
+        solicitação</button>
+    </section>
+
     <section class="destaques" id="destaques" aria-labelledby="destaques-titulo">
       <h2 id="destaques-titulo">Anúncios em destaque</h2>
       <p class="destaques-subtitulo">Destaque por boa avaliação ou por patrocínio, sempre identificado no card.</p>
@@ -176,6 +197,18 @@
   <footer>
     <p>&copy; 2026 Ligo LTDA - Todos os direitos reservados</p>
   </footer>
+
+  <dialog class="modal" id="modal-solicitacao" aria-labelledby="modal-solicitacao-titulo">
+    <div class="modal-conteudo">
+      <form method="dialog">
+        <button class="modal-fechar" aria-label="Fechar">&times;</button>
+      </form>
+
+      <span class="modal-selo">Em breve</span>
+      <h2 id="modal-solicitacao-titulo">Publicar uma solicitação</h2>
+      <p class="modal-intro">Estamos preparando esta função. Em breve você poderá publicar sua solicitação por aqui.</p>
+    </div>
+  </dialog>
 
   <script src="static/js/dados.js"></script>
   <script src="static/js/anuncios.js"></script>

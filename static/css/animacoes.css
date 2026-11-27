@@ -85,7 +85,8 @@ main {
 /*  Cards de benefício e etapas  */
 .beneficio,
 .etapa,
-.anuncio {
+.anuncio,
+.solicitar {
   transition:
     border-color var(--duracao),
     box-shadow var(--duracao);
@@ -99,7 +100,8 @@ main {
 @media (scripting: enabled) {
   .beneficio.revelar,
   .etapa.revelar,
-  .anuncio.revelar {
+  .anuncio.revelar,
+  .solicitar.revelar {
     transition:
       opacity 0.8s ease,
       transform 0.8s ease,
@@ -317,7 +319,8 @@ summary:focus-visible {
 @media (hover: hover) {
   .beneficio:hover,
   .etapa:hover,
-  .anuncio:hover {
+  .anuncio:hover,
+  .solicitar:hover {
     border-color: var(--royal-purple);
     box-shadow: var(--brilho-card);
   }
