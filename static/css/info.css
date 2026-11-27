@@ -81,6 +81,196 @@
   line-height: 1.4;
 }
 
+/*  Botão do card  */
+.etapa-botao {
+  align-self: flex-start;
+  margin-top: auto;
+  background-color: transparent;
+  color: var(--white);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/*  Modal  */
+body:has(.modal[open]) {
+  overflow: hidden;
+}
+
+.modal {
+  width: min(680px, calc(100% - 32px));
+  max-height: calc(100dvh - 48px);
+  padding: 0;
+  background-image: linear-gradient(145deg, var(--deep-violet), var(--dark-background));
+  border: 1px solid var(--border-purple);
+  border-radius: 20px;
+  color: var(--white);
+}
+
+.modal::backdrop {
+  background-color: rgba(11, 8, 26, 0.88);
+  backdrop-filter: blur(6px);
+}
+
+.modal-conteudo {
+  position: relative;
+  padding: 44px;
+}
+
+.modal-fechar {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+  border: 1px solid var(--border-purple);
+  border-radius: 12px;
+  color: var(--white);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal h2 {
+  margin: 0 0 8px;
+  padding-right: 56px;
+  font-size: 34px;
+}
+
+.modal-selo {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 6px 14px;
+  border: 1px solid var(--border-purple);
+  border-radius: 999px;
+  color: var(--purple-rose);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.modal-intro {
+  margin: 0;
+  color: var(--slate2);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.modal-passos {
+  display: grid;
+  gap: 20px;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: passo;
+}
+
+.modal-passos li {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 16px;
+  align-items: start;
+  color: var(--white);
+  font-size: 18px;
+  line-height: 1.5;
+  counter-increment: passo;
+}
+
+.modal-passos li::before {
+  content: counter(passo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border-purple);
+  border-radius: 50%;
+  color: var(--purple-rose);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.modal-exemplo {
+  margin-top: 32px;
+  padding: 20px 24px;
+  background-color: rgba(121, 85, 232, 0.08);
+  border: 1px solid var(--border-purple);
+  border-radius: 14px;
+}
+
+.modal-exemplo-rotulo {
+  color: var(--purple-rose);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.modal-exemplo-nota {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.estrelas {
+  color: var(--estrela);
+  font-size: 26px;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.estrela-vazia {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.modal-exemplo-valor {
+  color: var(--slate2);
+  font-size: 16px;
+}
+
+.modal-exemplo-comentario {
+  margin: 10px 0 0;
+  color: var(--white);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.modal-notas {
+  display: grid;
+  gap: 12px;
+  margin: 32px 0 0;
+  padding: 24px 0 0 20px;
+  border-top: 1px solid var(--border-purple);
+  color: var(--slate2);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.modal-notas li::marker {
+  color: var(--purple-rose);
+}
+
+.modal-notas .nota-cancelamento::marker {
+  color: var(--erro);
+}
+
+.cor-sucesso,
+.cor-erro {
+  font-weight: 600;
+}
+
+.cor-sucesso {
+  color: var(--success);
+}
+
+.cor-erro {
+  color: var(--erro);
+}
+
 /*  Chamada final  */
 .info-cta {
   display: flex;
@@ -140,6 +330,19 @@
 }
 
 @media (max-width: 480px) {
+  .modal-conteudo {
+    padding: 28px 20px;
+  }
+
+  .modal h2 {
+    font-size: 26px;
+  }
+
+  .modal-intro,
+  .modal-passos li {
+    font-size: 17px;
+  }
+
   .etapas-lista {
     grid-template-columns: 1fr;
   }

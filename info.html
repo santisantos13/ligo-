@@ -73,6 +73,7 @@
             <span class="etapa-rotulo">Para quem oferece serviços</span>
             <p>Encontre solicitações na sua região.</p>
           </div>
+          <button type="button" class="botao botao-contorno etapa-botao" data-modal="modal-solicitacao">Como funciona a solicitação</button>
         </li>
 
         <li class="etapa revelar">
@@ -86,6 +87,7 @@
             <span class="etapa-rotulo">Para quem oferece serviços</span>
             <p>Envie sua proposta para a solicitação.</p>
           </div>
+          <button type="button" class="botao botao-contorno etapa-botao" data-modal="modal-proposta">Como funciona a proposta</button>
         </li>
 
         <li class="etapa revelar">
@@ -99,6 +101,7 @@
             <span class="etapa-rotulo">Para quem oferece serviços</span>
             <p>Quando sua proposta for aceita, combine os detalhes do serviço.</p>
           </div>
+          <button type="button" class="botao botao-contorno etapa-botao" data-modal="modal-contratacao">Como funciona a contratação</button>
         </li>
 
         <li class="etapa revelar">
@@ -106,12 +109,13 @@
           <h2>Avaliação</h2>
           <div class="etapa-lado">
             <span class="etapa-rotulo">Para quem contrata</span>
-            <p>Avalie o profissional e conte como foi sua experiência.</p>
+            <p>Quando o serviço for concluído, avalie o profissional e conte como foi sua experiência.</p>
           </div>
           <div class="etapa-lado">
             <span class="etapa-rotulo">Para quem oferece serviços</span>
-            <p>Avalie o contratante e compartilhe sua experiência.</p>
+            <p>Quando o serviço for concluído, avalie o contratante e compartilhe sua experiência.</p>
           </div>
+          <button type="button" class="botao botao-contorno etapa-botao" data-modal="modal-avaliacao">Como funciona a avaliação</button>
         </li>
 
       </ol>
@@ -127,6 +131,75 @@
         <a href="cadastro.html?tipo=prestador" class="botao botao-contorno">Quero oferecer meus serviços</a>
       </div>
     </section>
+
+    <dialog class="modal" id="modal-avaliacao" aria-labelledby="modal-avaliacao-titulo">
+      <div class="modal-conteudo">
+        <form method="dialog">
+          <button class="modal-fechar" aria-label="Fechar">&times;</button>
+        </form>
+
+        <h2 id="modal-avaliacao-titulo">Como funciona a avaliação</h2>
+        <p class="modal-intro">Na LIGO!, contratantes e prestadores se avaliam, e cada lado tem a sua própria reputação.</p>
+
+        <ol class="modal-passos">
+          <li><span>O prestador marca o serviço como concluído.</span></li>
+          <li><span>O contratante tem 7 dias para <span class="cor-sucesso">confirmar</span> ou <span class="cor-erro">contestar</span>. Se não responder, a conclusão é confirmada automaticamente.</span></li>
+          <li><span>Depois da confirmação, os dois têm 14 dias para avaliar.</span></li>
+          <li><span>As avaliações só aparecem quando os dois enviarem ou quando o prazo acabar, para que uma não influencie a outra.</span></li>
+        </ol>
+
+        <div class="modal-exemplo">
+          <span class="modal-exemplo-rotulo">Exemplo de avaliação</span>
+          <div class="modal-exemplo-nota">
+            <span class="estrelas" role="img" aria-label="4 de 5 estrelas">★★★★<span class="estrela-vazia">★</span></span>
+            <span class="modal-exemplo-valor">4 de 5</span>
+          </div>
+          <p class="modal-exemplo-comentario">Chegou no horário e explicou tudo com clareza.</p>
+        </div>
+
+        <ul class="modal-notas">
+          <li>Cada avaliação tem uma nota de 1 a 5 estrelas e um comentário opcional.</li>
+          <li>A média aparece no perfil a partir da terceira avaliação e é calculada separadamente como contratante e como prestador.</li>
+          <li class="nota-cancelamento">Serviços cancelados não geram avaliação, e o cancelamento precisa da confirmação dos dois lados.</li>
+        </ul>
+      </div>
+    </dialog>
+
+    <dialog class="modal" id="modal-solicitacao" aria-labelledby="modal-solicitacao-titulo">
+      <div class="modal-conteudo">
+        <form method="dialog">
+          <button class="modal-fechar" aria-label="Fechar">&times;</button>
+        </form>
+
+        <span class="modal-selo">Em breve</span>
+        <h2 id="modal-solicitacao-titulo">Como funciona a solicitação</h2>
+        <p class="modal-intro">Estamos preparando uma explicação completa desta etapa. Em breve ela estará disponível aqui.</p>
+      </div>
+    </dialog>
+
+    <dialog class="modal" id="modal-proposta" aria-labelledby="modal-proposta-titulo">
+      <div class="modal-conteudo">
+        <form method="dialog">
+          <button class="modal-fechar" aria-label="Fechar">&times;</button>
+        </form>
+
+        <span class="modal-selo">Em breve</span>
+        <h2 id="modal-proposta-titulo">Como funciona a proposta</h2>
+        <p class="modal-intro">Estamos preparando uma explicação completa desta etapa. Em breve ela estará disponível aqui.</p>
+      </div>
+    </dialog>
+
+    <dialog class="modal" id="modal-contratacao" aria-labelledby="modal-contratacao-titulo">
+      <div class="modal-conteudo">
+        <form method="dialog">
+          <button class="modal-fechar" aria-label="Fechar">&times;</button>
+        </form>
+
+        <span class="modal-selo">Em breve</span>
+        <h2 id="modal-contratacao-titulo">Como funciona a contratação</h2>
+        <p class="modal-intro">Estamos preparando uma explicação completa desta etapa. Em breve ela estará disponível aqui.</p>
+      </div>
+    </dialog>
   </main>
 
   <footer>

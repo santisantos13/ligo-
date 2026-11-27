@@ -85,3 +85,24 @@ if (elementosRevelar.length > 0) {
     observador.observe(elemento);
   });
 }
+
+// Modais: abre o <dialog> indicado em data-modal e fecha ao clicar no fundo
+const botoesModal = document.querySelectorAll("[data-modal]");
+
+botoesModal.forEach(function (botao) {
+  const modal = document.getElementById(botao.dataset.modal);
+
+  if (!modal) {
+    return;
+  }
+
+  botao.addEventListener("click", function () {
+    modal.showModal();
+  });
+
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modal.close();
+    }
+  });
+});
