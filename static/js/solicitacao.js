@@ -185,6 +185,7 @@ const TAMANHO_CEP = 8;
 const campoCep = document.querySelector("#cep");
 const statusCep = document.querySelector("#cep-status");
 const textoAjudaCep = statusCep.textContent;
+const campoBairro = document.querySelector("#bairro");
 
 function apenasNumeros(texto) {
   return texto.replace(/\D/g, "");
@@ -204,6 +205,39 @@ const URL_VIACEP = "https://viacep.com.br/ws/";
 
 // Cada consulta recebe um número; só a mais recente pode mexer na tela
 let numeroConsultaCep = 0;
+
+function normalizarTexto(texto) {
+  return texto
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
+function acharCidadePorNome(nome) {
+  return cidades.find(function (cidade) {
+    return normalizarTexto(cidade.nome) === normalizarTexto(nome);
+  });
+}
+
+function preencherEndereco(dados) {
+  const cidade = acharCidadePorNome(dados.localidade);
+
+  if (!cidade) {
+    campoCidade.value = "";
+    statusCep.textContent =
+      "Ainda não atendemos " + dados.localidade + "/" + dados.uf + ". Escolha uma das cidades disponíveis.";
+    return;
+  }
+
+  campoCidade.value = cidade.slug;
+
+  if (dados.bairro) {
+    campoBairro.value = dados.bairro.slice(0, campoBairro.maxLength);
+  }
+
+  statusCep.textContent = "Cidade e bairro preenchidos. Você pode corrigir se precisar.";
+}
 
 async function consultarCep(cep) {
   const resposta = await fetch(URL_VIACEP + cep + "/json/");
@@ -236,7 +270,7 @@ async function buscarCep(cep) {
       return;
     }
 
-    statusCep.textContent = "CEP encontrado: " + dados.localidade + "/" + dados.uf + ".";
+    preencherEndereco(dados);
   } catch (erro) {
     if (minhaConsulta !== numeroConsultaCep) {
       return;
