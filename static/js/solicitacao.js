@@ -187,6 +187,9 @@ const statusCep = document.querySelector("#cep-status");
 const textoAjudaCep = statusCep.textContent;
 const campoBairro = document.querySelector("#bairro");
 
+// Guarda o último bairro preenchido pelo CEP, para limpar só o que não foi digitado pelo usuário
+let bairroAutomatico = "";
+
 function apenasNumeros(texto) {
   return texto.replace(/\D/g, "");
 }
@@ -224,6 +227,12 @@ function acharCidadePorNome(nome) {
 function preencherEndereco(dados) {
   const cidade = acharCidadePorNome(dados.localidade);
 
+  if (campoBairro.value === bairroAutomatico) {
+    campoBairro.value = "";
+  }
+
+  bairroAutomatico = "";
+
   if (!cidade) {
     campoCidade.value = "";
     statusCep.textContent =
@@ -235,6 +244,7 @@ function preencherEndereco(dados) {
 
   if (dados.bairro) {
     campoBairro.value = dados.bairro.slice(0, campoBairro.maxLength);
+    bairroAutomatico = campoBairro.value;
   }
 
   statusCep.textContent = "Cidade e bairro preenchidos. Você pode corrigir se precisar.";
