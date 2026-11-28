@@ -74,6 +74,11 @@
             <div id="categoria-grupos"></div>
           </fieldset>
 
+          <label for="cep">CEP <span class="campo-opcional">(opcional)</span></label>
+          <input type="text" name="cep" id="cep" placeholder="00000-000" maxlength="9" inputmode="numeric"
+            autocomplete="postal-code" aria-describedby="cep-status">
+          <p class="campo-ajuda" id="cep-status" aria-live="polite">Informe o CEP para preencher cidade e bairro automaticamente.</p>
+
           <div class="formulario-linha">
             <div>
               <label for="cidade">Cidade</label>
