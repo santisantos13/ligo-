@@ -1,6 +1,16 @@
 const botaoMenu = document.querySelector(".menu-botao");
 const menu = document.querySelector("#menu");
 
+function fecharMenu() {
+  if (!botaoMenu || !menu) {
+    return;
+  }
+
+  menu.classList.remove("aberto");
+  botaoMenu.setAttribute("aria-expanded", "false");
+  botaoMenu.setAttribute("aria-label", "Abrir menu");
+}
+
 if (botaoMenu && menu) {
   botaoMenu.addEventListener("click", function () {
     const aberto = menu.classList.toggle("aberto");
@@ -50,6 +60,33 @@ document.addEventListener("click", function (event) {
 
   if (categoriasSeletor && !categoriasSeletor.contains(event.target)) {
     categoriasSeletor.removeAttribute("open");
+  }
+});
+
+// Tecla Esc: fecha primeiro o menu suspenso aberto; se não houver, fecha o menu do celular
+document.addEventListener("keydown", function (event) {
+  if (event.key !== "Escape") {
+    return;
+  }
+
+  const suspensoAberto = document.querySelector("details.categorias[open], #cidade-seletor[open]");
+
+  if (suspensoAberto) {
+    suspensoAberto.removeAttribute("open");
+    suspensoAberto.querySelector("summary").focus();
+    return;
+  }
+
+  if (menu && menu.classList.contains("aberto")) {
+    fecharMenu();
+    botaoMenu.focus();
+  }
+});
+
+// Ao alargar a janela além do menu do celular, fecha o menu para não ficar "aberto" escondido
+window.matchMedia("(min-width: 901px)").addEventListener("change", function (evento) {
+  if (evento.matches) {
+    fecharMenu();
   }
 });
 
