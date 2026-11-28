@@ -198,6 +198,15 @@ if (formularioCadastro) {
     });
   }
 
+  // Marca o tipo de conta conforme o parâmetro ?tipo= da URL (ex.: cadastro.html?tipo=profissional)
+  const tipoConta = new URLSearchParams(window.location.search).get("tipo");
+
+  if (tipoConta === "contratante") {
+    caixaContratante.checked = true;
+  } else if (tipoConta === "profissional") {
+    caixaProfissional.checked = true;
+  }
+
   formularioCadastro.addEventListener("change", atualizarTextos);
   atualizarTextos();
 }
