@@ -205,6 +205,7 @@ const URL_VIACEP = "https://viacep.com.br/ws/";
 
 // Cada consulta recebe um número; só a mais recente pode mexer na tela
 let numeroConsultaCep = 0;
+let buscandoCep = false;
 
 function normalizarTexto(texto) {
   return texto
@@ -254,6 +255,7 @@ async function buscarCep(cep) {
 
   const minhaConsulta = numeroConsultaCep;
 
+  buscandoCep = true;
   campoCep.removeAttribute("aria-invalid");
   statusCep.textContent = "Buscando CEP...";
 
@@ -277,6 +279,10 @@ async function buscarCep(cep) {
     }
 
     statusCep.textContent = "Não foi possível consultar o CEP agora. Escolha a cidade abaixo.";
+  } finally {
+    if (minhaConsulta === numeroConsultaCep) {
+      buscandoCep = false;
+    }
   }
 }
 
@@ -291,6 +297,7 @@ campoCep.addEventListener("input", function () {
   }
 
   numeroConsultaCep += 1;
+  buscandoCep = false;
   campoCep.removeAttribute("aria-invalid");
   statusCep.textContent = textoAjudaCep;
 });
@@ -312,6 +319,18 @@ formularioSolicitacao.addEventListener("submit", function (event) {
       botoesGrupos.querySelector("button");
 
     marcarInvalido(primeiroCampo, areaMensagem, "Escolha uma categoria.");
+    return;
+  }
+
+  if (buscandoCep) {
+    marcarInvalido(campoCep, areaMensagem, "Aguarde a busca do CEP terminar.");
+    return;
+  }
+
+  const numerosCep = apenasNumeros(campoCep.value);
+
+  if (numerosCep.length > 0 && numerosCep.length < TAMANHO_CEP) {
+    marcarInvalido(campoCep, areaMensagem, "CEP incompleto: digite os " + TAMANHO_CEP + " números ou deixe em branco.");
     return;
   }
 
