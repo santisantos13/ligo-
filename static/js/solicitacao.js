@@ -178,6 +178,38 @@ function atualizarContador() {
 campoDescricao.addEventListener("input", atualizarContador);
 atualizarContador();
 
+// ---------- CEP: só números, máscara e detecção dos 8 dígitos ----------
+
+const TAMANHO_CEP = 8;
+
+const campoCep = document.querySelector("#cep");
+const statusCep = document.querySelector("#cep-status");
+const textoAjudaCep = statusCep.textContent;
+
+function apenasNumeros(texto) {
+  return texto.replace(/\D/g, "");
+}
+
+function formatarCep(numeros) {
+  if (numeros.length <= 5) {
+    return numeros;
+  }
+
+  return numeros.slice(0, 5) + "-" + numeros.slice(5);
+}
+
+campoCep.addEventListener("input", function () {
+  const numeros = apenasNumeros(campoCep.value).slice(0, TAMANHO_CEP);
+
+  campoCep.value = formatarCep(numeros);
+
+  if (numeros.length === TAMANHO_CEP) {
+    statusCep.textContent = "CEP completo.";
+  } else {
+    statusCep.textContent = textoAjudaCep;
+  }
+});
+
 // ---------- Envio ----------
 
 formularioSolicitacao.addEventListener("submit", function (event) {
