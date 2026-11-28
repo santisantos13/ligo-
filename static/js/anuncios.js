@@ -334,7 +334,7 @@ formularioBusca.addEventListener("submit", function (event) {
   event.preventDefault();
 
   buscarAgora({
-    categoria: "",
+    categoria: filtrosAtuais.categoria,
     cidade: campoCidade.value,
     servico: campoServico.value.trim()
   });
@@ -355,7 +355,7 @@ document.querySelectorAll(".cidade-lista button").forEach(function (botao) {
 // replaceState atualiza o endereço sem criar um passo novo no histórico a cada letra.
 campoServico.addEventListener("input", function () {
   const filtros = {
-    categoria: "",
+    categoria: filtrosAtuais.categoria,
     cidade: campoCidade.value,
     servico: campoServico.value.trim()
   };
