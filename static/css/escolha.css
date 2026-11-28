@@ -108,6 +108,13 @@
   font-size: 16px;
 }
 
+.escolha-ajuda-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
 
 
 
@@ -198,7 +205,7 @@
   .escolha-perfil {
     /* --u vale 1px num celular de 360x800 (o seu Galaxy A55).
        Em telas menores, encolhe; em maiores, cresce até no máximo 1.2px */
-    --u: min(0.2778vw, 0.125svh, 1.2px);
+    --u: min(0.2778vw, 0.118svh, 1.2px);
     padding: calc(12 * var(--u)) 0 calc(8 * var(--u));
   }
 
@@ -256,10 +263,13 @@
   }
 
   .escolha-ajuda {
-    flex-direction: row;
-    justify-content: center;
-    gap: calc(10 * var(--u));
+    gap: calc(8 * var(--u));
     margin-top: calc(12 * var(--u));
+  }
+
+  .escolha-ajuda-botoes {
+    flex-wrap: nowrap;
+    gap: calc(6 * var(--u));
   }
 
   .escolha-ajuda p {
