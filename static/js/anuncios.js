@@ -152,12 +152,21 @@ botaoMais.addEventListener("click", function () {
 
 // ---------- Filtros ----------
 
+// A URL pode ter qualquer coisa: só vale o slug que existe em dados.js
+function slugExiste(lista, slug) {
+  return lista.some(function (item) {
+    return item.slug === slug;
+  });
+}
+
 function lerFiltros() {
   const parametros = new URLSearchParams(window.location.search);
+  const categoria = parametros.get("categoria") || "";
+  const cidade = parametros.get("cidade") || "";
 
   return {
-    categoria: parametros.get("categoria") || "",
-    cidade: parametros.get("cidade") || "",
+    categoria: slugExiste(categorias, categoria) ? categoria : "",
+    cidade: slugExiste(cidades, cidade) ? cidade : "",
     servico: (parametros.get("servico") || "").trim()
   };
 }
